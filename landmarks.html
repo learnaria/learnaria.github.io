@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Our Community Website: Landmarks and other Static ARIA</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="test">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+
+        <script type="text/javascript" src="join.lib.js"></script>
+	    <script type="text/javascript" src="join.js"></script>
+
+<!--	    
+	<script type="text/javascript" src="libs/jquery.js"></script>	    
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/jquery-1.js"></script>
+-->
+	<!-- jQuery-UI Core files (minified) -->
+<!--	
+	<link type="text/css" href="../jquery/jQuery-ui_files/jquery-ui.css" rel="stylesheet">
+	<link type="text/css" href="../jquery/jQuery-ui_files/jquery.css" rel="stylesheet">
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/jquery-ui.js"></script>
+-->
+	<!-- Temporary Datepicker Files -->
+<!--
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/globalize.js"></script>
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/localization.js"></script>
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/date.js"></script>
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/picker.js"></script>
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/jquery_003.js"></script>
+-->
+	<!-- Demo specific files  -->
+<!-- 
+	<script type="text/javascript" src="../jquery/jQuery-ui_files/demo.js"></script>
+	<link rel="stylesheet" type="text/css" href="../jquery/jQuery-ui_files/demo.css">
+-->
+    </head>
+<body> 
+<div id="top-bar">&nbsp; </div>
+<div class="page_wrapper">
+<!-- 
+Exercise 2:
+Add role="banner" to header area 
+-->
+<div id="header">
+	<div id="course_title_container" style="left:1em;">		
+	    <h1 id="section-title">Our Community Website</h1>
+	</div>
+</div>
+<!-- 
+Exercise 2:
+Add tabindex="0", aria-label="main navigation", and role="navigation" to main navigation bar 
+-->
+<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
+    <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+        <a name="main-nav" id="main-nav"></a>
+        <ul style="" id="topnavlist">
+            <li><a href="landmarks.html" accesskey="1" title="Join Alt+1" class="active">Join</a></li>
+            <li><a href="photo_gallery.html" accesskey="2" title="Photo Gallery Alt+2">Photo Gallery</a></li>
+            <li><a href="networking.html" accesskey="3" title="Networking Alt+3">Networking</a></li>
+            <li><a href="mychoice.html" accesskey="4" title="Login Alt+4">My Choice</a></li>
+            <li><a href="../index.html" accesskey="4" title="Exercise Home Alt+5">Exercises</a></li>
+        </ul>
+    </div> 
+</div>
+<!-- 
+Exercise 2:
+Add role="search" to search input field 
+-->
+<div class="logoutbar">&nbsp; <input type="text" class="input" role="search"><input type="submit" value="search"></div>
+<div class="crumbcontainer">
+		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
+</div>
+<div id="contentwrapper">
+    <div id="lrg_content">
+<!-- 
+Exercise 2:
+Add tabindex="0", aria-label="side menu", and role="navigation" to side menu 
+-->
+		<div id="leftcolumn">
+		  <a id="menu"></a>
+		     <div id="side-menu" aria-label="left side menu" accesskey="0">
+		        <br/>
+                <h2 class="box"><span>Networking</span></h2>
+                <div class="box" id="menu_Networking">
+                    <ul class="social_side_menu">
+                        <li><a href="" class="fake">My Network</a></li>
+                        <li><a href="" class="fake">My Contacts</a></li>
+                        <li><a href="" class="fake">Network Profile</a></li>
+                        <li><a href="" class="fake">Gadgets</a></li>
+                        <li><a href="" class="fake">Network Groups</a></li>
+                        <li><a href="" class="fake">Settings</a></li>
+                    </ul>
+                    <div class="divider"></div>
+                </div>
+			<br/>
+                <h2 class="box"><span>People Online</span></h2>
+                <div class="box" id="menu_UsersOnline">
+                    <ul style="padding: 0px; list-style: none;">
+                        <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
+                    </ul>
+                </div>
+			<br/>
+		    </div>
+		</div>
+    </div>	<!-- //end of the left column -->	
+<!-- 
+Exercise 2:
+Add tabindex="0", aria-label="main content region", and role="main" to main content area 
+-->
+	<div id="contentcolumn">
+	<!-- //the page title -->
+	<div id="message"></div>
+	<br style="clear:both;">
+	<a id="top"></a>
+
+<div class="profile">
+<h2>Join our community</h2>
+<div id="feedback">&nbsp;</div>
+<form id="join_form">
+<dl>
+<dt>
+<img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
+</dt>
+<dd>
+</dd>
+<dt>
+<label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
+</dt>
+<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
+        <span id="username_error">&nbsp;</span><br />
+</dd>
+<!-- 
+Exercise 2:
+Add aria-required="true" and aria-describedby="xxxxxx_error" to the password and email fields 
+-->
+<dt>
+    <label for="password">Password:</label>
+    <img src="images/required.gif"  alt="Required Field" />
+</dt>
+<dd>
+    <input type="text" name="password" size="20" id="password" value="" class="input" /><br />
+    <span id="password_error">&nbsp;</span>
+</dd>
+<dt>
+    <label for="email">Email:</label>
+	<img src="images/required.gif" class="img" />
+</dt>
+<dd>    
+    <input type="text" name="email" size="30" id="email" value="" class="input"/><br />
+    <span id="email_error">&nbsp;</span>
+</dd>
+<dt>
+    <label for="fname">First Name:</label>
+</dt>
+<dd>
+    <input type="text" name="fname" size="20" id="fname" value="" class="input" />
+    <span id="fname_error">&nbsp;</span>
+</dd>
+<dt>
+    <label for="lname">Last Name:</label>
+</dt>
+<dd>
+    <input type="text" name="lname" size="20" id="lname" value="" class="input" />  
+    <span id="lname_error">&nbsp;</span> 
+</dd>
+<!-- 
+Exercise 3:
+Insert the jQuery datepicker here. Note that it must be contained with two divs
+
+<div id="demoTabs">
+	<div class="ui-tabs-panel" id="datepicker">
+		date picker markup goes here
+	</div>
+</div>
+-->
+<dt>
+    <label for="org">Organization</label>:
+</dt>
+<dd>
+    <input type="text"  class="input" id="org" name="organization" value="" size="30" />
+    <span id="org_error">&nbsp;</span>
+</dd>
+<dt>
+    <label for="address">Street Address</label>: 
+</dt>
+<dd>
+    <textarea  id="address"  class="input" name="address" cols="35" rows="3"></textarea>
+    <span id="address_error">&nbsp;</span>
+</dd>
+<dt>
+    <label for="city">City</label>: 
+</dt>
+<dd>
+    <input type="text" id="city" name="city"  class="input" value="" >
+    <span id="city_error">&nbsp;</span>
+</dd>
+<dt>
+    <label for="country">Country</label>: 
+</dt>
+<dd>
+    <select name="country" id="country">
+        <option value="ca">Canada</option>
+        <option value="usa">USA</option>
+    </select>
+    <span id="country_error">&nbsp;</span>
+</dd>
+
+<dt>
+    <dt class="state_block">
+                <label for="state">State:</label>
+    </dt>
+    <dd class="state_block">
+                <input type="text" name="state" id="state" maxlength="2" class="input"/>
+                <span id="state_error">&nbsp;</span>
+    </dd>
+     <dt class="state_block">   
+     <label for="zip">ZIP Code:</label>
+     </dt>
+     <dd class="state_block">
+                    <input type="text" name="zip" id="zip"  class="input"/>
+                    <span id="zip_error">&nbsp;</span><br />
+    </dd>
+
+    <dt class="prov_block">
+    <label for="province">Province:</label>
+    </dt>
+    <dd class="prov_block">
+                    <select name="province" id="province" class="input">
+                        <option value="BC">BC</option>
+                        <option value="AB">AB</option>
+                        <option value="SK">SK</option>
+                        <option value="MB">MB</option>
+                        <option value="ON">ON</option>
+                        <option value="QC">QC</option>
+                        <option value="PE">PE</option>
+                        <option value="BC">NS</option>
+                        <option value="NB">NB</option>
+                        <option value="NF">NFLD</option>
+                        <option value="YK">Yukon</option>
+                        <option value="NV">Nunavut</option>
+                        <option value="NW">NWT</option>
+                    </select>
+                    <span id="province_error">&nbsp;</span>
+    </dd>
+    <dt class="prov_block">
+                <label for="postal">Postal Code:</label>
+    </dt>
+    <dd class="prov_block">
+                    <input type="text" name="postal" id="postal" class="input"/>
+                    <span id="postal_error">&nbsp;</span><br />
+    </dd>
+
+<dt>
+    <label for="tele">Telephone</label>: 
+</dt>
+<dd>
+    <input type="text" id="tele" name="telephone"  class="input" value="" >
+    <span id="tele_error">&nbsp;</span>
+</dd>
+</dl>
+<br  style="clear:both;"/>
+<div>
+    <input type="button" id="join" value="Join" /> &nbsp;
+    <input type="button" id="reset_form" value="Reset" /><br />
+</div>
+</form>
+<br  style="clear:both;"/>
+
+		<br style="width:100%;clear:both;" />
+
+	</div>
+<!-- 
+Exercise 2:
+Add tabindex="0", aria-label="advertising" role="complimentary" to advertising area 
+-->
+<div id="advertising">
+<h2>Advertising</h2>
+<div>
+<img src="images/rum_cover.jpg" alt="" />
+<br style="clear:both;"/>
+</div>
+</div>
+</div>
+
+<p><br><br>&nbsp;</p>
+</div> <!-- end page wrapper --> 
+<p><br><br>&nbsp;</p>
+</div>
+<!-- 
+Exercise 2:
+Add role="contentinfo" to footer area 
+-->
+<div id="footer"> Copyright &copy; <a href="https://www.atutorspaces.com">ATutorSpaces Inc.</a>
+</div>
+
+
+</body>
+</html>
