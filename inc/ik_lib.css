@@ -1,0 +1,846 @@
+@charset "utf-8";
+html,
+body {
+  margin: 0;
+  padding: 50px 0;
+  font-family: sans-serif;
+  background-color: #fff;
+}
+header,
+main,
+footer {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.flexrow {
+  display: flex;
+  flex-flow: row nowrap;
+}
+p {
+  margin: 10px 0;
+}
+a {
+  color: #f76;
+  text-decoration: none;
+}
+input[type=text] {
+  padding: 8px 12px;
+  font: inherit;
+  border: 1px solid #ccc;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+button {
+  display: inline-block;
+  margin: 2px;
+  padding: 8px 12px;
+  border: none;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  background-color: #f76;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: #ff8e80;
+}
+button:active {
+  box-shadow: none;
+}
+button[disabled],
+button[disabled]:active,
+button[disabled]:hover,
+button[disabled]:focus {
+  background-color: #ddd;
+  color: #ccc;
+  box-shadow: none;
+  cursor: default;
+}
+.ik_readersonly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  text-indent: -10000px;
+}
+.ik_progressbar {
+  position: relative;
+}
+.ik_progressbar .ik_track {
+  position: relative;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.ik_progressbar .ik_fill {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #f76;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .2s linear;
+}
+.ik_tooltip {
+  position: absolute;
+  max-width: 200px;
+  padding: 5px 10px;
+  left: 0;
+  background-color: #ffd;
+  font-size: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.ik_tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.ik_tooltip:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: 20px;
+  bottom: -7px;
+  transform: rotate(45deg);
+  background-color: #ffc;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+}
+.ik_accordion {
+  margin: 10px 0;
+  padding: 0;
+}
+.ik_accordion dt {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.ik_accordion dt div[role=button] {
+  padding: 10px 10px 10px 30px;
+  background-color: #f76;
+  color: #fff;
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.ik_accordion dt div[role=button]:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 5px;
+  height: 5px;
+  margin-top: -4px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotateZ(45deg);
+  transition: transform .2s ease;
+}
+.ik_accordion dt div[role=button][aria-expanded=true]:before {
+  transform: rotateZ(135deg);
+}
+.ik_accordion dt div[role=button]:hover,
+.ik_accordion dt div[role=button]:focus {
+  background-color: #ff8e80;
+}
+.ik_accordion dt:first-of-type div[role=button] {
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ik_accordion dt:last-of-type div[role=button] {
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.ik_accordion dt:last-of-type div[role=button][aria-expanded=true] {
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ik_accordion dd {
+  margin: -1px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.ik_accordion dd:last-of-type {
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.ik_tabs .ik_tabbar {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  margin: 0 0 -1px 0;
+  padding: 0;
+  z-index: 999;
+}
+.ik_tabs .ik_tabbar li {
+  margin: 0 2px 1px 0;
+  padding: 10px 15px;
+  border: 1px solid #ff4a33;
+  background-color: #f76;
+  color: #fff;
+  cursor: pointer;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+.ik_tabs .ik_tabbar li.selected {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-color: #ccc;
+  color: #000;
+}
+.ik_tabs .ik_tabpanel {
+  display: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  min-height: 150px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.ik_treemenu {
+  width: 240px;
+  margin: 10px 50px 10px 0;
+  flex-shrink: 0;
+}
+.ik_treemenu .title {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.ik_treemenu span {
+  display: block;
+  margin: -2px 0 0 -5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.ik_treemenu span:hover {
+  background-color: #ffd2cc;
+}
+.ik_treemenu .folder {
+  display: block;
+  font-weight: bold;
+}
+.ik_treemenu .folder:before {
+  content: '\2212';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: -20px;
+  width: 9px;
+  height: 9px;
+  line-height: 7px;
+  font-weight: normal;
+  font-size: .65em;
+  text-align: center;
+  background-color: #fff;
+  color: #f76;
+  border: 1px solid #f76;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  z-index: 1;
+}
+.ik_treemenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ik_treemenu ul li {
+  position: relative;
+  margin-left: 20px;
+  padding: 2px 0;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  outline: none;
+}
+.ik_treemenu ul li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 12px;
+  height: 100%;
+  border-left: 1px solid #f76;
+}
+.ik_treemenu ul li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 12px;
+  height: .7em;
+  border-bottom: 1px solid #f76;
+}
+.ik_treemenu ul li:last-of-type:before {
+  height: .7em;
+  border-bottom: 1px solid #f76;
+}
+.ik_treemenu ul li:last-of-type:after {
+  display: none;
+}
+.ik_treemenu ul li:focus > span {
+  background-color: #f76;
+  color: #fff;
+}
+.ik_treemenu ul li.collapsed ul {
+  display: none;
+}
+.ik_treemenu ul li.collapsed .folder:before {
+  content: '+';
+  background-color: #f76;
+  color: #fff;
+}
+.ik_treemenu .mouseover {
+  background-color: #ffd2cc;
+}
+.ik_menu {
+  margin: 10px 0;
+  background-color: #f76;
+  line-height: 1;
+}
+.ik_menu ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 2.5em;
+  color: #fff;
+}
+.ik_menu ul li {
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.ik_menu ul li:hover,
+.ik_menu ul li:focus,
+.ik_menu ul li[aria-expanded=true] {
+  background-color: #ff8e80;
+}
+.ik_menu ul li[aria-expanded=true] > ul {
+  display: flex;
+}
+.ik_menu ul li[aria-haspopup=true] > a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.ik_menu ul li[aria-haspopup=true] > a:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-top: -1px;
+  margin-left: 5px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotateZ(45deg);
+}
+.ik_menu ul li ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 200px;
+  height: auto;
+  background-color: #ff8e80;
+}
+.ik_menu ul li ul li {
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+}
+.ik_menu ul li ul li:hover,
+.ik_menu ul li ul li:focus,
+.ik_menu ul li ul li[aria-expanded=true] {
+  background-color: #f76;
+}
+.ik_menu ul li ul li[aria-haspopup=true] > a {
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: space-between;
+}
+.ik_menu ul li ul li[aria-haspopup=true] > a:after {
+  margin-top: 1px;
+  transform: rotateZ(-45deg);
+}
+.ik_menu ul li ul li ul {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.ik_menu ul a {
+  display: block;
+  padding: .75em;
+  color: #fff;
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
+}
+.ik_suggest {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.ik_suggest .suggestions {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+}
+.ik_suggest .suggestions li {
+  padding: 3px;
+  cursor: pointer;
+}
+.ik_suggest .suggestions li span {
+  font-weight: bold;
+}
+.ik_suggest .suggestions li:hover {
+  background-color: #f76;
+  color: #fff;
+}
+.ik_suggest .suggestions li.selected {
+  background-color: #f76;
+  color: #fff;
+}
+.ik_sortable {
+  margin: 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.ik_sortable ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+.ik_sortable ul li {
+  display: block;
+  list-style: none;
+  position: relative;
+  box-sizing: border-box;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #eee;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  cursor: pointer;
+}
+.ik_sortable ul li:hover,
+.ik_sortable ul li:focus {
+  background-color: #f76;
+  color: #fff;
+}
+.ik_sortable .dragover {
+  position: relative;
+}
+.ik_sortable .dragover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  top: -4px;
+  bottom: auto;
+  width: 100%;
+  background-color: #f76;
+  z-index: 9;
+}
+.ik_sortable .dragover.dropafter:after {
+  top: auto;
+  bottom: -4px;
+}
+.ik_slider {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.ik_slider .ik_value {
+  width: 40px;
+  margin: 0 10px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.ik_slider .ik_track {
+  position: relative;
+  margin: 10px;
+  height: 6px;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.ik_slider .ik_fill {
+  width: 100%;
+  height: 100%;
+  background-color: #f76;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .2s linear;
+}
+.ik_slider .ik_knob {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -7px;
+  left: 0;
+  margin-left: -10px;
+  background-color: #f76;
+  -webkit-border-top-left-radius: 50%;
+  -webkit-border-top-right-radius: 50%;
+  -webkit-border-bottom-left-radius: 50%;
+  -webkit-border-bottom-right-radius: 50%;
+  -moz-border-radius-topleft: 50%;
+  -moz-border-radius-topright: 50%;
+  -moz-border-radius-bottomleft: 50%;
+  -moz-border-radius-bottomright: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  cursor: pointer;
+  transition: left .2s linear;
+}
+.ik_slider.dragging .ik_fill,
+.ik_slider.dragging .ik_knob {
+  transition: none;
+  cursor: move;
+}
+.ik_carousel {
+  position: relative;
+  height: 400px;
+  margin: 1em 0;
+  padding: 0;
+  overflow: hidden;
+}
+.ik_carousel:hover .ik_controls .ik_button {
+  visibility: visible;
+  opacity: 1;
+}
+.ik_carousel figure {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  background-size: cover;
+  background-position: center center;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.ik_carousel figure.active {
+  display: flex;
+  z-index: 9;
+}
+.ik_carousel figure.active.right {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.ik_carousel figure.active.left {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+.ik_carousel figure.active figcaption {
+  z-index: 10;
+}
+.ik_carousel figure.next {
+  display: flex;
+  z-index: 8;
+}
+.ik_carousel figure h2 {
+  text-transform: uppercase;
+}
+.ik_carousel figure img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.ik_carousel figure figcaption {
+  width: 50%;
+  font-size: 1.4em;
+  text-align: center;
+  text-shadow: 0 1px 3px #000, 0 -1px 3px #000;
+  color: #fff;
+}
+.ik_carousel figure figcaption > * {
+  margin: .2em 0;
+  padding: 0;
+}
+.ik_carousel figure.left {
+  transform: translateX(1);
+}
+.ik_carousel .ik_controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 11;
+}
+.ik_carousel .ik_controls .ik_button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: pointer;
+  pointer-events: all;
+}
+.ik_carousel .ik_controls .ik_button:after {
+  display: block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-left: 5px solid #fff;
+  border-top: 5px solid #fff;
+}
+.ik_carousel .ik_controls .ik_button.ik_prev {
+  order: 1;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 50%;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 50%;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 50%;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 50%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 50%;
+}
+.ik_carousel .ik_controls .ik_button.ik_prev:after {
+  transform: rotate(-45deg);
+}
+.ik_carousel .ik_controls .ik_button.ik_next {
+  order: 3;
+  -webkit-border-top-left-radius: 50%;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 50%;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topleft: 50%;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 50%;
+  -moz-border-radius-bottomright: 0;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 0;
+}
+.ik_carousel .ik_controls .ik_button.ik_next:after {
+  transform: rotate(135deg);
+}
+.ik_carousel .ik_controls .ik_button:hover {
+  background-color: #f76;
+}
+.ik_carousel .ik_controls .ik_navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  order: 2;
+  justify-content: space-around;
+  align-self: flex-end;
+  list-style: none;
+  margin: 10px;
+  padding: 5px;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+}
+.ik_carousel .ik_controls .ik_navbar:hover {
+  background-color: #f76;
+}
+.ik_carousel .ik_controls .ik_navbar li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.ik_carousel .ik_controls .ik_navbar li:after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  -webkit-border-top-left-radius: 50%;
+  -webkit-border-top-right-radius: 50%;
+  -webkit-border-bottom-left-radius: 50%;
+  -webkit-border-bottom-right-radius: 50%;
+  -moz-border-radius-topleft: 50%;
+  -moz-border-radius-topright: 50%;
+  -moz-border-radius-bottomleft: 50%;
+  -moz-border-radius-bottomright: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border: 2px solid #fff;
+}
+.ik_carousel .ik_controls .ik_navbar li.active:after,
+.ik_carousel .ik_controls .ik_navbar li:hover:after {
+  background-color: #fff;
+}
