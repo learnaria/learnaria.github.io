@@ -1,7 +1,7 @@
 # LearnAria Course Files
-The files in this repository accompany the "Accessibility for Web Developers" course, and eBook, created by The Chang School of Continuing Education at Ryerson University, in Toronto, Canada.
+The files in this repository accompany the "Web Accessibility for Developers" course, and eBook, created by The Chang School of Continuing Education at Ryerson University, in Toronto, Canada.
 
-[Accessibility for Web Developers](https://de.ryerson.ca/wa/advanced/)
+[Web Accessibility for Developers](https://de.ryerson.ca/wa/advanced/)
 
 There are 10 widgets included in this repository, that are purposely inaccessible. As part of the course activities, participants learn about WAI-ARIA, and apply what they learn to fix the accessibility of these widgets. Widgets include:
 
