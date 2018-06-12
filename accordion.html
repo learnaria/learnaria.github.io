@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Accordion</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_accordion.js"></script>
+		<script>
+			
+			//var $pb, timer;
+			
+			$(document).ready(function() {
+				
+				$(".multiselect").ik_accordion();
+				$(".singleselect").ik_accordion({ 'autoCollapse': true});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Accordion</h1>
+			<h2>autoCollapse = false</h2>
+			<dl class="multiselect">
+				<dt>Accordion panel</dt>
+				<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo.</dd>
+				<dt>Accordion panel</dt>
+				<dd>Vestibulum feugiat nibh enim, sed accumsan ante cursus sit amet. Nam metus est, rutrum vitae nibh ut, consectetur ultrices lacus. Duis a aliquam tortor, eget viverra elit. Vivamus vitae dui in ex sagittis hendrerit.</dd>
+			</dl>
+			<h2>autoCollapse = true</h2>
+			<dl class="singleselect">
+				<dt>Accordion panel</dt>
+				<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo.</dd>
+				<dt>Accordion panel</dt>
+				<dd>Vestibulum feugiat nibh enim, sed accumsan ante cursus sit amet. Nam metus est, rutrum vitae nibh ut, consectetur ultrices lacus. Duis a aliquam tortor, eget viverra elit. Vivamus vitae dui in ex sagittis hendrerit.</dd>
+				<dt>Accordion panel</dt>
+				<dd>Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo. Vestibulum feugiat nibh enim, sed accumsan ante cursus sit amet. Nam metus est, rutrum vitae nibh ut, consectetur ultrices lacus. Duis a aliquam tortor, eget viverra elit. Vivamus vitae dui in ex sagittis hendrerit.</dd>
+			</dl>
+		</main>
+	</body>
+</html>
