@@ -166,7 +166,7 @@ button[disabled]:focus {
   margin: 0;
   padding: 0;
 }
-.ik_accordion dt div[role=button] {
+.ik_accordion dt .button {
   padding: 10px 10px 10px 30px;
   background-color: #f76;
   color: #fff;
@@ -176,7 +176,7 @@ button[disabled]:focus {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-.ik_accordion dt div[role=button]:before {
+.ik_accordion dt .button:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -189,14 +189,14 @@ button[disabled]:focus {
   transform: rotateZ(45deg);
   transition: transform .2s ease;
 }
-.ik_accordion dt div[role=button][aria-expanded=true]:before {
+.ik_accordion dt .button.expanded:before {
   transform: rotateZ(135deg);
 }
-.ik_accordion dt div[role=button]:hover,
-.ik_accordion dt div[role=button]:focus {
+.ik_accordion dt .button:hover,
+.ik_accordion dt .button:focus {
   background-color: #ff8e80;
 }
-.ik_accordion dt:first-of-type div[role=button] {
+.ik_accordion dt:first-of-type .button {
   -webkit-border-top-left-radius: 6px;
   -webkit-border-top-right-radius: 6px;
   -webkit-border-bottom-left-radius: 0;
@@ -210,7 +210,7 @@ button[disabled]:focus {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.ik_accordion dt:last-of-type div[role=button] {
+.ik_accordion dt:last-of-type .button {
   -webkit-border-top-left-radius: 0;
   -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-left-radius: 6px;
@@ -224,7 +224,7 @@ button[disabled]:focus {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-.ik_accordion dt:last-of-type div[role=button][aria-expanded=true] {
+.ik_accordion dt:last-of-type .button.expanded {
   -webkit-border-top-left-radius: 0;
   -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-left-radius: 0;
