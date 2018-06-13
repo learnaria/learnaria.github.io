@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Slider</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_slider.js"></script>
+		<script>
+			
+			var timer;
+			
+			$(document).ready(function() {
+				
+				$(".slider").ik_slider({
+					'minValue': 20, 
+					'maxValue': 80, 
+					'step': 12
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Slider</h1>
+			<p>The following slider is configured to show values between 20 and 80, with a 12 point increment.</p>
+			<p><input type="text" name="duration" value="0" class="slider"></p>
+		</main>
+	</body>
+</html>
