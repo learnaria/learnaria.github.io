@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Progress Bar</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_progressbar.js"></script>
+		<script>
+			
+			var $pb, timer;
+			
+			$(document).ready(function() {
+				
+				$pb = $("#pb").ik_progressbar({'max' : 1500});
+				
+			});
+			
+			function runTest(e) {
+				
+				var $elem, pb;
+				
+				$elem = $pb.eq(0).focus(); 
+				pb = $elem.data("ik_progressbar");
+				pb.setValue(0);
+				
+				window.timer = window.setInterval(updateProgress, 200, pb);
+				$(e.currentTarget).prop({ "disabled": true });
+				
+			}
+			
+			function updateProgress(pb) {
+				
+				var val, lbl;
+				
+				val = pb.getValue();
+				
+				if(val < pb.options.max) {
+					lbl = 'Loading... ' + val + 'kb (' + pb.getPercent() + '%)';
+					pb.setValue(val + Math.random() * 50 + 50);
+				} else {
+					window.clearInterval(timer);
+					lbl = 'Loading complete!';
+					pb.element.blur().focus();
+					$("#btnTest").prop({ "disabled": false });
+				}
+				
+				$('#pb_lbl').text(lbl);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Progress Bar</h1>
+			<p>
+				<div id="pb_lbl">Click on <strong>Run Demo</strong> to simulate downlod.</div>
+			</p>
+			<p>
+				<div id="pb"></div>
+			</p>
+			<button id="btnTest" onclick="runTest(event);">Run Demo</button>
+		</main>
+	</body>
+</html>
