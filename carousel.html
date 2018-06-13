@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Carousel</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_carousel.js"></script>
+		<script>
+			
+			var timer;
+			
+			$(document).ready(function() {
+				
+				$(".carousel").ik_carousel();
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Carousel</h1>
+			<div class="carousel">
+				<figure>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Kasteel_van_Chambord%2C_2007.jpg/1024px-Kasteel_van_Chambord%2C_2007.jpg" target="_blank" alt="">
+					<figcaption style="background-color:rgba(0,0,0,.5)">
+						<h2>Château de Chambord</h2>
+						<p>By <a href="https://commons.wikimedia.org/w/index.php?curid=26258460">Hubert DENIES</a></p>
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bratislava%2C_Hrad%2C_Slovensko.jpg/1280px-Bratislava%2C_Hrad%2C_Slovensko.jpg" target="_blank" alt="">
+					<figcaption style="background-color:rgba(0,0,0,.5)">
+						<h2>Bratislavský hrad</h2>
+						<p>By <a href="https://commons.wikimedia.org/wiki/User:LMih">LMih</a></p>
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Burg_Karlstein_-_Karl%C5%A1tejn_-_panoramio.jpg/1280px-Burg_Karlstein_-_Karl%C5%A1tejn_-_panoramio.jpg" target="_blank" alt="">
+					<figcaption style="background-color:rgba(0,0,0,.5)">
+						<h2>Karlštejn castle</h2>
+						<p>By Jürgen Regel</p>
+					</figcaption>
+				</figure>
+			</div>
+		</main>
+	</body>
+</html>
