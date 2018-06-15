@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Suggestions</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/countries.js"></script>
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_suggest.js"></script>
+		<script>
+			
+			var timer;
+			
+			$(document).ready(function() {
+				
+				$("#country").ik_suggest({ 
+					min_length: 1,
+					source: countries 
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Suggestion Box</h1>
+			<p><label for="country">Country:</label> <input type="text" value="" id="country" size="50"></p>
+			<p>Lorem ipsum dolor sit, consectetur adipiscing elit. Sed blandit pellentesque felis eget venenatis. Duis venenatis consectetur lacinia. Proin elementum eu justo vel dignissim.</p>
+			
+		</main>
+	</body>
+</html>
