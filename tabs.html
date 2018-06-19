@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Tab Panels</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_tabs.js"></script>
+		<script>
+			
+			$(document).ready(function() {
+				
+				$(".tabs").ik_tabs({
+					'selectedIndex': 1
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Tabs</h1>
+			<div class="tabs">
+				<div title="Lorem Ipsum">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo.</p>
+				</div>
+				<div>
+					<p>Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. </p>
+				</div>
+				<div>
+					<p>Sed sed varius massa. Integer sed volutpat leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Nullam consectetur erat purus, nec molestie metus molestie at.</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
