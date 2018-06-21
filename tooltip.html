@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Tooltip</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_tooltip.js"></script>
+		<script>
+			
+			var timer;
+			
+			$(document).ready(function() {
+				
+				$(".hastooltip").ik_tooltip();
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Tooltip</h1>
+			<p>Lorem ipsum dolor sit <a href="#" class="hastooltip" title="This is a sample link that provides additional information to users by means of a tooltip.">tooltip</a>, consectetur adipiscing elit. Sed blandit pellentesque felis eget venenatis. Duis venenatis consectetur lacinia. Proin elementum eu justo vel dignissim.</p>
+			<p><input type="text" placeholder="Name" value="" class="hastooltip" title="Please enter your name here"></p>
+		</main>
+	</body>
+</html>
