@@ -5,15 +5,18 @@ body {
   padding: 50px 0;
   font-family: sans-serif;
   background-color: #fff;
+  text-align: center;
 }
 header,
 main,
 footer {
+  display: block;
   width: 800px;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
+  text-align: left;
 }
 .flexrow {
   display: flex;
@@ -106,7 +109,6 @@ button[disabled]:focus {
   background-color: #f76;
   transform-origin: left;
   transform: scaleX(0);
-  transition: transform .2s linear;
 }
 .ik_tooltip {
   position: absolute;
@@ -354,12 +356,14 @@ button[disabled]:focus {
   z-index: 1;
 }
 .ik_treemenu ul {
+  display: block;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .ik_treemenu ul li {
   position: relative;
+  display: block;
   margin-left: 20px;
   padding: 2px 0;
   border-radius: 3px;
@@ -431,19 +435,20 @@ button[disabled]:focus {
 }
 .ik_menu ul li:hover,
 .ik_menu ul li:focus,
-.ik_menu ul li[aria-expanded=true] {
+.ik_menu ul li.expanded {
   background-color: #ff8e80;
 }
-.ik_menu ul li[aria-expanded=true] > ul {
+.ik_menu ul li.expanded > ul {
   display: flex;
 }
-.ik_menu ul li[aria-haspopup=true] > a {
+.ik_menu ul li.expandable > a {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
 }
-.ik_menu ul li[aria-haspopup=true] > a:after {
+.ik_menu ul li.expandable > a:after {
   content: "";
+  display: block;
   width: 5px;
   height: 5px;
   margin-top: -1px;
@@ -467,15 +472,15 @@ button[disabled]:focus {
 }
 .ik_menu ul li ul li:hover,
 .ik_menu ul li ul li:focus,
-.ik_menu ul li ul li[aria-expanded=true] {
+.ik_menu ul li ul li.expanded {
   background-color: #f76;
 }
-.ik_menu ul li ul li[aria-haspopup=true] > a {
+.ik_menu ul li ul li.expandable > a {
   box-sizing: border-box;
   width: 100%;
   justify-content: space-between;
 }
-.ik_menu ul li ul li[aria-haspopup=true] > a:after {
+.ik_menu ul li ul li.expandable > a:after {
   margin-top: 1px;
   transform: rotateZ(-45deg);
 }
@@ -633,10 +638,12 @@ button[disabled]:focus {
   cursor: pointer;
   transition: left .2s linear;
 }
+.ik_slider.dragging {
+  cursor: pointer;
+}
 .ik_slider.dragging .ik_fill,
 .ik_slider.dragging .ik_knob {
   transition: none;
-  cursor: move;
 }
 .ik_carousel {
   position: relative;
@@ -698,11 +705,25 @@ button[disabled]:focus {
   z-index: 0;
 }
 .ik_carousel figure figcaption {
-  width: 50%;
+  width: 60%;
+  padding: 20px 30px;
   font-size: 1.4em;
   text-align: center;
   text-shadow: 0 1px 3px #000, 0 -1px 3px #000;
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
+  -webkit-border-top-left-radius: 9px;
+  -webkit-border-top-right-radius: 9px;
+  -webkit-border-bottom-left-radius: 9px;
+  -webkit-border-bottom-right-radius: 9px;
+  -moz-border-radius-topleft: 9px;
+  -moz-border-radius-topright: 9px;
+  -moz-border-radius-bottomleft: 9px;
+  -moz-border-radius-bottomright: 9px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
 }
 .ik_carousel figure figcaption > * {
   margin: .2em 0;
