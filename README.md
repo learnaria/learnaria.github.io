@@ -17,7 +17,7 @@ There are 10 widgets included in this repository, that are purposely inaccessibl
 * List Reorderer
 
 ## Using These Files
-To use these file, course participants (or anyone interested in creating accessible widgets) should:
+To use these files, course participants (or anyone interested in creating accessible widgets) should:
 
 1. Fork this repository into their own GitHub account
 1. Rename the forked repository to [username].github.io in the repo's settings
