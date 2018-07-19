@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Tree Menu</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_treemenu.js"></script>
+		<script>
+			
+			$(document).ready(function() {
+				
+				$(".tree").ik_treemenu( {'expandAll': false} ); 
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Tree Menu</h1>
+			<div class="flexrow">
+				<nav class="tree">
+					<ul>
+						<li>Bread</li>
+						<li>Cereal</li>
+						<li>Fruit
+							<ul>
+								<li>Bananas</li>
+								<li>Oranges</li>
+								<li>Apples
+									<ul>
+										<li>Macintosh</li>
+										<li>Red Delicious</li>
+										<li>Granny Smith</li>
+									</ul>
+								</li>
+								<li>Pears</li>
+							</ul>
+						</li>
+						<li>Vegetables
+							<ul>
+								<li>Tomatos</li>
+								<li>Latice</li>
+							</ul>
+						</li>
+						<li>Yogurt</li>
+					</ul>
+				</nav>
+				<div class="content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a mi at enim scelerisque laoreet. In hac habitasse platea dictumst. Sed eu sodales sapien, sed venenatis ex. Curabitur non condimentum tellus. Ut quis sapien tempus nunc vehicula suscipit sit amet non neque. Nullam pellentesque at metus et tristique. Praesent et ligula orci. Vestibulum mattis vel lacus quis pulvinar.</p>
+					<p>Curabitur elementum at quam varius fermentum. Duis ut bibendum ex. Suspendisse potenti. Aenean massa erat, tempor eu erat eu, tempus viverra lectus. Sed efficitur, ligula in cursus vulputate, lacus odio volutpat mauris, ac pulvinar ex velit id neque. Praesent ultricies augue vel eros suscipit convallis. Etiam aliquet tristique convallis. Vestibulum eu fringilla leo, ut ultrices metus. Integer mattis tempus auctor. Integer nec magna at metus suscipit sagittis at non risus. Vestibulum tincidunt, sem et suscipit pellentesque, metus nisl varius arcu, sed finibus felis purus ac nisi. Aliquam sollicitudin, lectus non sollicitudin consectetur, nibh mi porta mi, eget vestibulum magna ipsum sed elit. Duis sapien dolor, auctor non nunc vitae, convallis pretium felis. Sed consectetur at ligula a pulvinar. Nulla et felis a augue rutrum elementum vitae id nisl.</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
