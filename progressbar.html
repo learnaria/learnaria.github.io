@@ -20,31 +20,32 @@
 			
 			function runTest(e) {
 				
-				var $elem, pb;
+				var $elem, plugin;
 				
-				$elem = $pb.eq(0).focus(); 
-				pb = $elem.data("ik_progressbar");
-				pb.setValue(0);
+				$elem = $pb.attr({
+					'tabindex': 0
+				}).focus(); 
+				plugin = $elem.data("ik_progressbar");
+				plugin.reset();
 				
-				window.timer = window.setInterval(updateProgress, 200, pb);
+				window.timer = window.setInterval(updateProgress, 100, plugin);
 				$(e.currentTarget).prop({ "disabled": true });
 				
 			}
 			
-			function updateProgress(pb) {
+			function updateProgress(plugin) {
 				
 				var val, lbl;
 				
-				val = pb.getValue();
+				val = plugin.getValue();
 				
-				if(val < pb.options.max) {
-					lbl = 'Loading... ' + val + 'kb (' + pb.getPercent() + '%)';
-					pb.setValue(val + Math.random() * 50 + 50);
+				if(val < plugin.options.max) {
+					lbl = 'Loading... ' + val + 'kb (' + plugin.getPercent() + '%)';
+					plugin.setValue(val + 10);
 				} else {
 					window.clearInterval(timer);
 					lbl = 'Loading complete!';
-					pb.element.blur().focus();
-					$("#btnTest").prop({ "disabled": false });
+					$("#btnTest").prop({ "disabled": false }).focus();
 				}
 				
 				$('#pb_lbl').text(lbl);
@@ -57,7 +58,7 @@
 			<a href="index.html">&larr; Index</a>
 			<h1>Progress Bar</h1>
 			<p>
-				<div id="pb_lbl">Click on <strong>Run Demo</strong> to simulate downlod.</div>
+				<div id="pb_lbl">Click on <strong>Run Demo</strong> to simulate download.</div>
 			</p>
 			<p>
 				<div id="pb"></div>
