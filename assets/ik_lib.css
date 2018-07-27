@@ -865,3 +865,68 @@ button[disabled]:focus {
 .ik_carousel .ik_controls .ik_navbar li:hover:after {
   background-color: #fff;
 }
+.buttongroup {
+  display: flex;
+  flex-floe: row nowrap;
+}
+.buttongroup .toggle {
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  margin: 0 -1px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.buttongroup .toggle:first-of-type {
+  margin-left: 0;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 0;
+}
+.buttongroup .toggle:last-of-type {
+  margin-right: 0;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 6px;
+}
+.buttongroup .toggle:hover {
+  color: #f76;
+}
+.buttongroup .toggle:focus {
+  z-index: 1;
+}
+.buttongroup .toggle.pressed {
+  background-color: #f76;
+  color: #fff;
+  border-color: #cc5f52;
+  box-shadow: inset 0 5px 3px -3px rgba(0, 0, 0, 0.25);
+}
+.buttongroup .italic {
+  font-style: italic;
+}
+.buttongroup .bold {
+  font-weight: bold;
+}
+.buttongroup .underline {
+  text-decoration: underline;
+}
