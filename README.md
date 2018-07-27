@@ -3,8 +3,11 @@ The files in this repository accompany the "Web Accessibility for Developers" co
 
 [Web Accessibility for Developers](https://de.ryerson.ca/wa/advanced/)
 
-There are 10 widgets included in this repository, that are purposely inaccessible. As part of the course activities, participants learn about WAI-ARIA, and apply what they learn to fix the accessibility of these widgets. Widgets include:
+There are 10 widgets included in this repository (plus one example widget), that are purposely inaccessible. As part of the course activities, participants learn about WAI-ARIA, and apply what they learn to fix the accessibility of these widgets. 
 
+Widgets include:
+
+* Toggle Buttons (Example)
 * Progressbar
 * Accordion
 * Carousel
@@ -14,7 +17,7 @@ There are 10 widgets included in this repository, that are purposely inaccessibl
 * Tooltips
 * Tab Panel
 * AutoComplete Form
-* List Reorderer
+* Sortable List
 
 ## Using These Files
 To use these files, course participants (or anyone interested in creating accessible widgets) should:
@@ -32,5 +35,3 @@ To use these files, course participants (or anyone interested in creating access
 ## Beyond the Course
 The _Web Accessibility for Developers_ course will also be available as an ebook, with a link posted here when it becomes available. Those who are unable to participate in the course, or those who would like a reference based on the course, you are encouraged to download the ebook and work through the exercises on their own.
 
-## Building on LearnAria
-Participants in the course, or anyone wishing to build on the learnaria library, are encouraged to create new widgets for the library, or improve on the existing ones, and submit pull requests to the learnaria repository. 
