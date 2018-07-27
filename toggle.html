@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>IK Library: Toggle Button</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_togglebutton.js"></script>
+		<script>
+			
+			$(document).ready(function() {
+				
+				$('.italic').ik_togglebutton({'label': 'italic', 'onToggle': buttonAction });
+				$('.bold').ik_togglebutton({'label': 'bold', 'onToggle': buttonAction });
+				$('.underline').ik_togglebutton({'label': 'underline', 'onToggle': buttonAction });
+				
+			});
+			
+			function buttonAction() {
+				var plugin, $elem, label, state;
+				
+				plugin = this;
+				$elem = plugin.element;
+				label = plugin.options.label;
+				state = plugin.options.isPressed ? 'pressed' : 'not pressed';
+				
+				console.log(label + ' button is ' + state);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1>Toggle Button</h1>
+			<div class="buttongroup">
+				<div class="toggle italic">I</div>
+				<div class="toggle bold">B</div>
+				<div class="toggle underline">U</div>
+			</div>
+		</main>
+	</body>
+</html>
