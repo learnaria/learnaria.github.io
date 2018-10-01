@@ -1,236 +1,333 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <title>Our Community Website: Landmarks and other Static WAI-ARIA</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="description" content="test">
-        <link rel="stylesheet" href="styles.css" type="text/css">
 
-        <script type="text/javascript" src="join.lib.js"></script>
-	    <script type="text/javascript" src="join.js"></script>
-    </head>
-<body> 
-<div id="top-bar">&nbsp; </div>
-<div class="page_wrapper">
+<head>
+  <title>Our Community Website: Landmarks and other Static WAI-ARIA</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="test">
+  <link rel="stylesheet" href="styles.css" type="text/css">
 
-<div id="header">
-	<div id="course_title_container" style="left:1em;">		
-	    <h1 id="section-title">Our Community Website</h1>
-	</div>
-</div>
+  <script type="text/javascript" src="join.lib.js"></script>
+  <script type="text/javascript" src="join.js"></script>
+</head>
 
-<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
-    <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+<body>
+
+  <!-- start top-bar -->
+  <div id="top-bar">&nbsp;</div>
+  <!-- end top-bar -->
+
+  <!-- start page_wrapper -->
+  <div class="page_wrapper">
+
+    <!-- start header -->
+    <header id="header" role="banner">
+      <div id="course_title_container" style="left:1em;">
+        <h1 id="section-title">Our Community Website</h1>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <!-- start lrg_topnav -->
+    <nav class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav" role="navigation" aria-label="main navigation tabs">
+      <div style="width: 100%;" id="topnavlistcontainer">
         <a name="main-nav" id="main-nav"></a>
+
+        <!-- start topnavlist -->
         <ul style="" id="topnavlist">
-        <li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
-            <li><a href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a></li>
-            <li><a href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a></li>
-            <li><a href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a></li>
-            <li><a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
-            <li><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li> 
+          <li>
+            <a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a>
+          </li>
+          <li>
+            <a href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a>
+          </li>
+          <li>
+            <a href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a>
+          </li>
+          <li>
+            <a href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a>
+          </li>
+          <li>
+            <a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a>
+          </li>
+          <li>
+            <a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a>
+          </li>
         </ul>
-    </div> 
-</div>
+        <!-- end topnavlist -->
 
-<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
-<div class="crumbcontainer">
-		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
-</div>
-<div id="contentwrapper">
-    <div id="lrg_content">
-		<div id="leftcolumn">
-		  <a id="menu"></a>
-		     <div id="side-menu" aria-label="left side menu" accesskey="0">
-		        <br/>
-                <h2 class="box"><span>Networking</span></h2>
-                <div class="box" id="menu_Networking">
-                    <ul class="social_side_menu">
-                        <li><a href="" class="fake">My Network</a></li>
-                        <li><a href="" class="fake">My Contacts</a></li>
-                        <li><a href="" class="fake">Network Profile</a></li>
-                        <li><a href="" class="fake">Gadgets</a></li>
-                        <li><a href="" class="fake">Network Groups</a></li>
-                        <li><a href="" class="fake">Settings</a></li>
-                    </ul>
-                    <div class="divider"></div>
-                </div>
-			<br/>
-                <h2 class="box"><span>People Online</span></h2>
-                <div class="box" id="menu_UsersOnline">
-                    <ul style="padding: 0px; list-style: none;">
-                        <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
-                    </ul>
-                </div>
-			<br/>
-		    </div>
-		</div>
-    </div>	<!-- //end of the left column -->	
+      </div>
+    </nav>
+    <!-- end lrg_topnav -->
 
-	<div id="contentcolumn">
-	<div id="message"></div>
-	<br style="clear:both;">
-	<a id="top"></a>
+    <!-- start logoutbar -->
+    <div class="logoutbar" role="search" aria-label="search website">
+      &nbsp;
+      <input type="text" class="input">
+      <input type="submit" value="search">
+    </div>
+    <!-- end logoutbar -->
 
-<div class="profile">
-<h2>Join our community</h2>
-<div id="feedback">&nbsp;</div>
-<form id="join_form">
-<dl>
-<dt>
-<img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
-</dt>
-<dd>
-</dd>
-<dt>
-<label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
-</dt>
-<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
-        <span id="username_error">&nbsp;</span><br />
-</dd>
-<dt>
-    <label for="password">Password:</label>
-    <img src="images/required.gif"  alt="Required Field" />
-</dt>
-<dd>
-    <input type="text" name="password" size="20" id="password" value="" class="input" /><br />
-    <span id="password_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="email">Email:</label>
-	<img src="images/required.gif" class="img" />
-</dt>
-<dd>    
-    <input type="text" name="email" size="30" id="email" value="" class="input"/><br />
-    <span id="email_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="fname">First Name:</label>
-</dt>
-<dd>
-    <input type="text" name="fname" size="20" id="fname" value="" class="input" />
-    <span id="fname_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="lname">Last Name:</label>
-</dt>
-<dd>
-    <input type="text" name="lname" size="20" id="lname" value="" class="input" />  
-    <span id="lname_error">&nbsp;</span> 
-</dd>
+    <!-- start crumbcontainer -->
+    <nav class="crumbcontainer" role="navigation" aria-label="breadcrumb links">
+      <div id="breadcrumbs" tabindex="0">&nbsp;</div>
+    </nav>
+    <!-- end crumbcontainer -->
 
-<dt>
-    <label for="org">Organization</label>:
-</dt>
-<dd>
-    <input type="text"  class="input" id="org" name="organization" value="" size="30" />
-    <span id="org_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="address">Street Address</label>: 
-</dt>
-<dd>
-    <textarea  id="address"  class="input" name="address" cols="35" rows="3"></textarea>
-    <span id="address_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="city">City</label>: 
-</dt>
-<dd>
-    <input type="text" id="city" name="city"  class="input" value="" >
-    <span id="city_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="country">Country</label>: 
-</dt>
-<dd>
-    <select name="country" id="country">
-        <option value="ca">Canada</option>
-        <option value="usa">USA</option>
-    </select>
-    <span id="country_error">&nbsp;</span>
-</dd>
+    <!-- start contentwrapper -->
+    <div id="contentwrapper">
 
-<dt>
-    <dt class="state_block">
+      <!-- start lrg_content -->
+      <div id="lrg_content">
+
+        <!-- start leftcolumn -->
+        <div id="leftcolumn">
+          <a id="menu"></a>
+
+          <!-- start side-menu -->
+          <aside id="side-menu" role="complementary" aria-label="left side bar" accesskey="0">
+
+            <!-- start networking -->
+            <br/>
+            <h2 id="menu_Networking_title" class="box"><span>Networking</span></h2>
+            <nav class="box" id="menu_Networking" role="navigation" aria-labelledby="menu_Networking_title">
+              <ul class="social_side_menu">
+                <li><a href="" class="fake">My Network</a></li>
+                <li><a href="" class="fake">My Contacts</a></li>
+                <li><a href="" class="fake">Network Profile</a></li>
+                <li><a href="" class="fake">Gadgets</a></li>
+                <li><a href="" class="fake">Network Groups</a></li>
+                <li><a href="" class="fake">Settings</a></li>
+              </ul>
+              <div class="divider"></div>
+            </nav>
+            <br/>
+            <!-- end networking -->
+
+            <!-- people online -->
+            <h2 id="menu_UsersOnline_title" class="box"><span>People Online</span></h2>
+            <div class="box" id="menu_UsersOnline" role="status" aria-labelledby="menu_UsersOnline_title">
+              <ul style="padding: 0px; list-style: none;">
+                <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
+              </ul>
+            </div>
+            <br/>
+            <!-- end people online -->
+
+          </aside>
+          <!-- end side-menu -->
+
+        </div>
+        <!-- end leftcolumn -->
+
+      </div>
+      <!-- end lrg_content -->
+
+      <!-- start contentcolumn -->
+      <div id="contentcolumn">
+
+        <!-- start message -->
+        <div id="message"></div>
+        <!-- end message -->
+
+        <br style="clear:both;">
+        <a id="top"></a>
+
+        <!-- start profile -->
+        <main class="profile" role="main">
+          <h2>Join our community</h2>
+          <div id="feedback">&nbsp;</div>
+
+          <!-- start join_form -->
+          <form id="join_form">
+            <dl>
+              <dt>
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
+              </dt>
+              <dd>
+              </dd>
+
+              <dt>
+                <label for="username">Username:</label>
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" />
+              </dt>
+              <dd>
+                <input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username" required aria-required="true" aria-describedby="username_error">
+                <br />
+                <span id="username_error" role=”alert”>&nbsp;</span>
+                <br />
+              </dd>
+
+              <dt>
+                <label for="password">Password:</label>
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" />
+              </dt>
+              <dd>
+                <input type="text" name="password" size="20" id="password" value="" class="input" required aria-required="true" aria-describedby="password_error" />
+                <br />
+                <span id="password_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="email">Email:</label>
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" />
+              </dt>
+              <dd>
+                <input type="text" name="email" size="30" id="email" value="" class="input" required aria-required="true" aria-describedby="email_error" />
+                <br />
+                <span id="email_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="fname">First Name:</label>
+              </dt>
+              <dd>
+                <input type="text" name="fname" size="20" id="fname" value="" class="input" aria-describedby="fname_error" />
+                <span id="fname_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="lname">Last Name:</label>
+              </dt>
+              <dd>
+                <input type="text" name="lname" size="20" id="lname" value="" class="input" aria-describedby="lname_error" />
+                <span id="lname_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="org">Organization</label>:
+              </dt>
+              <dd>
+                <input type="text" class="input" id="org" name="organization" value="" size="30" aria-describedby="org_error" />
+                <span id="org_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="address">Street Address</label>:
+              </dt>
+              <dd>
+                <textarea id="address" class="input" name="address" cols="35" rows="3" aria-describedby="address_error"></textarea>
+                <span id="address_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="city">City</label>:
+              </dt>
+              <dd>
+                <input type="text" id="city" name="city" class="input" value="" aria-describedby="city_error">
+                <span id="city_error">&nbsp;</span>
+              </dd>
+
+              <dt>
+                <label for="country">Country</label>:
+              </dt>
+              <dd>
+                <select name="country" id="country" aria-describedby="country_error">
+                  <option value="ca">Canada</option>
+                  <option value="usa">USA</option>
+                </select>
+                <span id="country_error">&nbsp;</span>
+              </dd>
+
+              <dt class="state_block">
                 <label for="state">State:</label>
-    </dt>
-    <dd class="state_block">
-                <input type="text" name="state" id="state" maxlength="2" class="input"/>
+              </dt>
+              <dd class="state_block">
+                <input type="text" name="state" id="state" maxlength="2" class="input" aria-describedby="state_error" />
                 <span id="state_error">&nbsp;</span>
-    </dd>
-     <dt class="state_block">   
-     <label for="zip">ZIP Code:</label>
-     </dt>
-     <dd class="state_block">
-                    <input type="text" name="zip" id="zip"  class="input"/>
-                    <span id="zip_error">&nbsp;</span><br />
-    </dd>
+              </dd>
 
-    <dt class="prov_block">
-    <label for="province">Province:</label>
-    </dt>
-    <dd class="prov_block">
-                    <select name="province" id="province" class="input">
-                        <option value="BC">BC</option>
-                        <option value="AB">AB</option>
-                        <option value="SK">SK</option>
-                        <option value="MB">MB</option>
-                        <option value="ON">ON</option>
-                        <option value="QC">QC</option>
-                        <option value="PE">PE</option>
-                        <option value="BC">NS</option>
-                        <option value="NB">NB</option>
-                        <option value="NF">NFLD</option>
-                        <option value="YK">Yukon</option>
-                        <option value="NV">Nunavut</option>
-                        <option value="NW">NWT</option>
-                    </select>
-                    <span id="province_error">&nbsp;</span>
-    </dd>
-    <dt class="prov_block">
+              <dt class="state_block">
+                <label for="zip">ZIP Code:</label>
+              </dt>
+              <dd class="state_block">
+                <input type="text" name="zip" id="zip" class="input" aria-describedby="zip_error" />
+                <span id="zip_error">&nbsp;</span>
+                <br />
+              </dd>
+
+              <dt class="prov_block">
+                <label for="province">Province:</label>
+              </dt>
+              <dd class="prov_block">
+                <select name="province" id="province" class="input" aria-describedby="province_error">
+                  <option value="BC">BC</option>
+                  <option value="AB">AB</option>
+                  <option value="SK">SK</option>
+                  <option value="MB">MB</option>
+                  <option value="ON">ON</option>
+                  <option value="QC">QC</option>
+                  <option value="PE">PE</option>
+                  <option value="BC">NS</option>
+                  <option value="NB">NB</option>
+                  <option value="NF">NFLD</option>
+                  <option value="YK">Yukon</option>
+                  <option value="NV">Nunavut</option>
+                  <option value="NW">NWT</option>
+                </select>
+                <span id="province_error">&nbsp;</span>
+              </dd>
+              <dt class="prov_block">
                 <label for="postal">Postal Code:</label>
-    </dt>
-    <dd class="prov_block">
-                    <input type="text" name="postal" id="postal" class="input"/>
-                    <span id="postal_error">&nbsp;</span><br />
-    </dd>
+              </dt>
+              <dd class="prov_block">
+                <input type="text" name="postal" id="postal" class="input" aria-describedby="postal_error" />
+                <span id="postal_error">&nbsp;</span>
+                <br />
+              </dd>
 
-<dt>
-    <label for="tele">Telephone</label>: 
-</dt>
-<dd>
-    <input type="text" id="tele" name="telephone"  class="input" value="" >
-    <span id="tele_error">&nbsp;</span>
-</dd>
-</dl>
-<br  style="clear:both;"/>
-<div>
-    <input type="button" id="join" value="Join" /> &nbsp;
-    <input type="button" id="reset_form" value="Reset" /><br />
-</div>
-</form>
-<br  style="clear:both;"/>
+              <dt>
+                <label for="tele">Telephone</label>:
+              </dt>
+              <dd>
+                <input type="text" id="tele" name="telephone" class="input" value="" aria-describedby="tele_error">
+                <span id="tele_error">&nbsp;</span>
+              </dd>
+            </dl>
 
-		<br style="width:100%;clear:both;" />
+            <br style="clear:both;" />
+            <div>
+              <input type="button" id="join" value="Join" /> &nbsp;
+              <input type="button" id="reset_form" value="Reset" />
+              <br />
+            </div>
+          </form>
+          <!-- end join_form -->
 
-	</div>
-<div id="advertising">
-<h2>Advertising</h2>
-<div>
-<img src="images/rum_cover.jpg" alt="" />
-<br style="clear:both;"/>
-</div>
-</div>
-</div>
+          <br style="clear:both;" />
+          <br style="width:100%;clear:both;" />
+        </main>
+        <!-- end profile -->
 
-<p><br><br>&nbsp;</p>
-</div> <!-- end page wrapper --> 
-<p><br><br>&nbsp;</p>
-</div>
+        <!-- start advertising -->
+        <aside id="advertising" role="complementary">
+          <h2>Advertising</h2>
+          <div>
+            <img src="images/rum_cover.jpg" alt="" />
+            <br style="clear:both;" />
+          </div>
+        </aside>
+        <!-- end advertising -->
 
-<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
-</div>
+      </div>
+      <!-- end contentcolumn -->
+
+      <p>
+      <br>
+      <br>&nbsp;</p>
+    </div>
+    <!-- end contentwrapper -->
+    <p>
+    <br>
+    <br>&nbsp;</p>
+  </div>
+  <!-- end page_wrapper -->
+
+  <!-- start footer -->
+  <footer id="footer" role="contentinfo">
+    Copyright &copy; <a href="" class="fake">Chang School.</a>
+  </footer>
+  <!-- end footer -->
 
 </body>
 </html>
