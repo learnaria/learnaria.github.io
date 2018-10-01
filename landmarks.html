@@ -148,10 +148,11 @@
               </dd>
 
               <dt>
-                <label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
+                <label for="username">Username:</label>
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" />
               </dt>
               <dd>
-                <input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username" aria-required="true" aria-describedby="username_error">
+                <input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username" required aria-required="true" aria-describedby="username_error">
                 <br />
                 <span id="username_error">&nbsp;</span>
                 <br />
@@ -159,20 +160,20 @@
 
               <dt>
                 <label for="password">Password:</label>
-                <img src="images/required.gif"  alt="Required Field" />
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" />
               </dt>
               <dd>
-                <input type="text" name="password" size="20" id="password" value="" class="input" />
+                <input type="text" name="password" size="20" id="password" value="" class="input" required aria-required="true" />
                 <br />
                 <span id="password_error">&nbsp;</span>
               </dd>
 
               <dt>
                 <label for="email">Email:</label>
-                <img src="images/required.gif" class="img" />
+                <img src="images/required.gif" height="14" width="14" alt="Required Field" />
               </dt>
               <dd>
-                <input type="text" name="email" size="30" id="email" value="" class="input" />
+                <input type="text" name="email" size="30" id="email" value="" class="input" required aria-required="true" />
                 <br />
                 <span id="email_error">&nbsp;</span>
               </dd>
