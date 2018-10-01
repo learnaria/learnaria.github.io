@@ -21,16 +21,16 @@
   <div class="page_wrapper">
 
     <!-- start header -->
-    <div id="header">
+    <header id="header" role="banner">
       <div id="course_title_container" style="left:1em;">
         <h1 id="section-title">Our Community Website</h1>
       </div>
-    </div>
+    </header>
     <!-- end header -->
 
     <!-- start lrg_topnav -->
-    <div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
-      <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+    <nav class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav" role="navigation" aria-label="main navigation tabs">
+      <div style="width: 100%;" id="topnavlistcontainer">
         <a name="main-nav" id="main-nav"></a>
 
         <!-- start topnavlist -->
@@ -57,20 +57,21 @@
         <!-- end topnavlist -->
 
       </div>
-    </div>
+    </nav>
     <!-- end lrg_topnav -->
 
     <!-- start logoutbar -->
-    <div class="logoutbar">&nbsp;
+    <div class="logoutbar" role="search" aria-label="search website">
+      &nbsp;
       <input type="text" class="input">
       <input type="submit" value="search">
     </div>
     <!-- end logoutbar -->
 
     <!-- start crumbcontainer -->
-    <div class="crumbcontainer">
-      <div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
-    </div>
+    <nav class="crumbcontainer" role="navigation" aria-label="breadcrumb links">
+      <div id="breadcrumbs" tabindex="0">&nbsp;</div>
+    </nav>
     <!-- end crumbcontainer -->
 
     <!-- start contentwrapper -->
@@ -88,8 +89,8 @@
 
             <!-- start networking -->
             <br/>
-            <h2 class="box"><span>Networking</span></h2>
-            <div class="box" id="menu_Networking">
+            <h2 id="menu_Networking_title" class="box"><span>Networking</span></h2>
+            <nav class="box" id="menu_Networking" role="navigation" aria-labelledby="menu_Networking_title">
               <ul class="social_side_menu">
                 <li><a href="" class="fake">My Network</a></li>
                 <li><a href="" class="fake">My Contacts</a></li>
@@ -99,17 +100,17 @@
                 <li><a href="" class="fake">Settings</a></li>
               </ul>
               <div class="divider"></div>
-            </div>
+            </nav>
             <br/>
             <!-- end networking -->
 
             <!-- people online -->
-            <h2 class="box"><span>People Online</span></h2>
-            <div class="box" id="menu_UsersOnline">
+            <h2 id="menu_UsersOnline_title" class="box"><span>People Online</span></h2>
+            <aside class="box" id="menu_UsersOnline" role="status" aria-labelledby="menu_UsersOnline_title">
               <ul style="padding: 0px; list-style: none;">
                 <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
               </ul>
-            </div>
+            </aside>
             <br/>
             <!-- end people online -->
 
@@ -133,7 +134,7 @@
         <a id="top"></a>
 
         <!-- start profile -->
-        <div class="profile">
+        <main class="profile" role="main">
           <h2>Join our community</h2>
           <div id="feedback">&nbsp;</div>
 
@@ -294,17 +295,17 @@
 
           <br style="clear:both;" />
           <br style="width:100%;clear:both;" />
-        </div>
+        </main>
         <!-- end profile -->
 
         <!-- start advertising -->
-        <div id="advertising">
+        <aside id="advertising" role="complementary">
           <h2>Advertising</h2>
           <div>
             <img src="images/rum_cover.jpg" alt="" />
             <br style="clear:both;" />
           </div>
-        </div>
+        </aside>
         <!-- end advertising -->
 
       </div>
@@ -322,9 +323,9 @@
   <!-- end page_wrapper -->
 
   <!-- start footer -->
-  <div id="footer">
+  <footer id="footer" role="contentinfo">
     Copyright &copy; <a href="" class="fake">Chang School.</a>
-  </div>
+  </footer>
   <!-- end footer -->
 
 </body>
