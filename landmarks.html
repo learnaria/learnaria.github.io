@@ -12,15 +12,15 @@
 <body> 
 <div id="top-bar">&nbsp; </div>
 <div class="page_wrapper">
-
-<div id="header">
+<!-- add role="banner" to header area -->
+<div id="header" role="banner" tabindex="0">
 	<div id="course_title_container" style="left:1em;">		
 	    <h1 id="section-title">Our Community Website</h1>
 	</div>
 </div>
-
-<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
-    <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+<!-- add role="navigation" to main navigation -->
+<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav" role="navigation" aria-label="main navigation" tabindex="0">
+    <div style="width: 100%;" id="topnavlistcontainer"  aria-label="main navigation tabs">
         <a name="main-nav" id="main-nav"></a>
         <ul style="" id="topnavlist">
         <li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
@@ -32,14 +32,17 @@
         </ul>
     </div> 
 </div>
-
-<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
+<!-- add role="search" to search box , label search box-->
+<div class="logoutbar">&nbsp; 
+  <input type="text" class="input" role="search" aria-label="Enter search text">
+  <input type="submit" value="search"></div>
 <div class="crumbcontainer">
 		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
 </div>
 <div id="contentwrapper">
-    <div id="lrg_content">
-		<div id="leftcolumn">
+    <div id="lrg_content" >
+    <!-- add role="navigation" to side menu -->
+		<div id="leftcolumn" role="navigation" aria-label="side menu" tabindex="0">
 		  <a id="menu"></a>
 		     <div id="side-menu" aria-label="left side menu" accesskey="0">
 		        <br/>
@@ -65,19 +68,19 @@
 			<br/>
 		    </div>
 		</div>
-    </div>	<!-- //end of the left column -->	
-
+    </div>	<!-- //end of the left column -->	  
 	<div id="contentcolumn">
 	<div id="message"></div>
 	<br style="clear:both;">
 	<a id="top"></a>
-
-<div class="profile">
+<!-- add role="main" to main section/region-->
+<div class="profile" role="main" aria-label="main content" tabindex="0">
 <h2>Join our community</h2>
 <div id="feedback">&nbsp;</div>
-<form id="join_form">
+<!-- Add role=”alert” to the first error message and for success msg, see join.lib.js where setting attributes-->
+<form id="join_form">  
 <dl>
-<dt>
+<dt
 <img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
 </dt>
 <dd>
@@ -97,8 +100,9 @@
     <span id="password_error">&nbsp;</span>
 </dd>
 <dt>
+    <!--added alt for image here -->
     <label for="email">Email:</label>
-	<img src="images/required.gif" class="img" />
+	<img src="images/required.gif" class="img" alt="Required Field" />
 </dt>
 <dd>    
     <input type="text" name="email" size="30" id="email" value="" class="input"/><br />
@@ -215,10 +219,12 @@
 		<br style="width:100%;clear:both;" />
 
 	</div>
-<div id="advertising">
+<!-- Add role="complementary" to advertising area-->
+<div id="advertising" role="complementary" aria-label="advertising" tabindex="0">
 <h2>Advertising</h2>
 <div>
-<img src="images/rum_cover.jpg" alt="" />
+  <!-- added alt for image here -->
+<img src="images/rum_cover.jpg" alt="ryerson university magazine cover" />
 <br style="clear:both;"/>
 </div>
 </div>
@@ -228,8 +234,8 @@
 </div> <!-- end page wrapper --> 
 <p><br><br>&nbsp;</p>
 </div>
-
-<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
+<!-- Add role="contentinfo" to footer area -->
+<div id="footer" role="contentinfo" tabindex="0"> Copyright &copy; <a href="" class="fake">Chang School.</a>
 </div>
 
 </body>
