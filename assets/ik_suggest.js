@@ -33,19 +33,38 @@ var pluginName = "ik_suggest",
 		
 		plugin = this;
 		
-		$elem = this.element
+		plugin.notify = $('<div/>') // add hidden live region to be used by screen readers
+			.addClass('ik_readersonly');
+		
+		$elem = plugin.element
 			.attr({
 				'autocomplete': 'off'
 			})
 			.wrap('<span class="ik_suggest"></span>') 
+			.on('focus', {'plugin': plugin}, plugin.onFocus)
 			.on('keydown', {'plugin': plugin}, plugin.onKeyDown) // add keydown event
 			.on('keyup', {'plugin': plugin}, plugin.onKeyUp) // add keyup event
 			.on('focusout', {'plugin': plugin}, plugin.onFocusOut);  // add focusout event
 		
-		this.list = $('<ul/>').addClass('suggestions');
+		plugin.list = $('<ul/>').addClass('suggestions');
 		
-		$elem.after(this.notify, this.list);
+		$elem.after(plugin.notify, plugin.list);
 				
+	};
+	
+	/** 
+	 * Handles focus event on text field.
+	 * 
+	 * @param {object} event - Keyboard event.
+	 * @param {object} event.data - Event data.
+	 * @param {object} event.data.plugin - Reference to plugin.
+	 */
+	Plugin.prototype.onFocus = function (event) {
+		
+		var plugin;
+		
+		plugin = event.data.plugin;
+
 	};
 	
 	/** 
@@ -95,22 +114,22 @@ var pluginName = "ik_suggest",
 		
 		plugin = event.data.plugin;
 		$me = $(event.currentTarget);
-		
-			suggestions = plugin.getSuggestions(plugin.options.source, $me.val());
+			
+				plugin.list.empty();
 				
-				if (suggestions.length) {
+				suggestions = plugin.getSuggestions(plugin.options.source, $me.val());
+				
+				if (suggestions.length > 1) {
+					for(var i = 0, l = suggestions.length; i < l; i++) {
+						$('<li/>').html(suggestions[i])
+						.on('click', {'plugin': plugin}, plugin.onOptionClick) // add click event handler
+						.appendTo(plugin.list);
+					}
 					plugin.list.show();
 				} else {
 					plugin.list.hide();
 				}
-				
-				plugin.list.empty();
-				
-				for(var i = 0, l = suggestions.length; i < l; i++) {
-					$('<li/>').html(suggestions[i])
-					.on('click', {'plugin': plugin}, plugin.onOptionClick) // add click event handler
-					.appendTo(plugin.list);
-				}
+
 	};
 	
 	/** 
