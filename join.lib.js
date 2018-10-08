@@ -39,7 +39,7 @@ var JoinForm = function () {
    	this.fields["password"].isPassword = ["Password must be 4 or more letters and 2 or more numbers"];
     this.fields["state"].isState = "State is not valid.";
     this.fields["zip"].isZip = "ZIP Code is not valid.";
-    this.fields["province"].isProvince = "Province is not valid.";
+    this.fields["province"].isProvince = "Province/Territory is not valid.";
     this.fields["postal"].isPostal = "Postal Code is not valid.";
     this.fields["tele"].isPhone = "Phone number is not valid.";
     this.success = "You have successfully joined. We're happy to have you as a member."
@@ -87,12 +87,11 @@ JoinForm.prototype.isCountry = function(country){
 }
 
 JoinForm.prototype.isState = function (text) {
-    var states = new Array(
-        "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
+    var states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
         "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
         "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
         "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI",
-        "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY");
+        "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
     for( var i in states ) {
         if ( text == states[i] ) {
             return true;
@@ -102,9 +101,7 @@ JoinForm.prototype.isState = function (text) {
 }
 
 JoinForm.prototype.isProvince = function (text) {
-    var provinces = new Array(
-        "BC", "AB", "SK", "MB", "ON", "QB", "PE", "NS", "NF", "NB",
-        "YK", "NV", "NW" );
+    var provinces = ["AB", "BC", "MB", "NB", "NL", "NS", "NU", "NT", "ON", "PE", "QC", "SK", "YT"];
     for( var i in provinces ) {
         if ( text == provinces[i] ) {
             return true;
