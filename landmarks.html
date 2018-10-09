@@ -9,31 +9,31 @@
         <script type="text/javascript" src="join.lib.js"></script>
 	    <script type="text/javascript" src="join.js"></script>
     </head>
-<body> 
+<body>
 <div id="top-bar">&nbsp; </div>
 <div class="page_wrapper">
 
-<div id="header">
-	<div id="course_title_container" style="left:1em;">		
+<div role="banner" id="header">
+	<div id="course_title_container" style="left:1em;">
 	    <h1 id="section-title">Our Community Website</h1>
 	</div>
 </div>
 
 <div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
-    <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+    <div role="navigation" style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
         <a name="main-nav" id="main-nav"></a>
         <ul style="" id="topnavlist">
-        <li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
+            <li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
             <li><a href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a></li>
             <li><a href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a></li>
             <li><a href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a></li>
             <li><a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
-            <li><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li> 
+            <li><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li>
         </ul>
-    </div> 
+    </div>
 </div>
 
-<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
+<div role="search" class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
 <div class="crumbcontainer">
 		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
 </div>
@@ -41,7 +41,7 @@
     <div id="lrg_content">
 		<div id="leftcolumn">
 		  <a id="menu"></a>
-		     <div id="side-menu" aria-label="left side menu" accesskey="0">
+		     <div role="navigation" id="side-menu" aria-label="left side menu" accesskey="0">
 		        <br/>
                 <h2 class="box"><span>Networking</span></h2>
                 <div class="box" id="menu_Networking">
@@ -55,24 +55,24 @@
                     </ul>
                     <div class="divider"></div>
                 </div>
-			<br/>
+			    <br/>
                 <h2 class="box"><span>People Online</span></h2>
                 <div class="box" id="menu_UsersOnline">
                     <ul style="padding: 0px; list-style: none;">
                         <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
                     </ul>
                 </div>
-			<br/>
+			    <br/>
 		    </div>
 		</div>
-    </div>	<!-- //end of the left column -->	
+    </div>	<!-- //end of the left column -->
 
 	<div id="contentcolumn">
 	<div id="message"></div>
 	<br style="clear:both;">
 	<a id="top"></a>
 
-<div class="profile">
+<div role="main" aria-label="main content region" class="profile">
 <h2>Join our community</h2>
 <div id="feedback">&nbsp;</div>
 <form id="join_form">
@@ -100,7 +100,7 @@
     <label for="email">Email:</label>
 	<img src="images/required.gif" class="img" />
 </dt>
-<dd>    
+<dd>
     <input type="text" name="email" size="30" id="email" value="" class="input"/><br />
     <span id="email_error">&nbsp;</span>
 </dd>
@@ -115,8 +115,8 @@
     <label for="lname">Last Name:</label>
 </dt>
 <dd>
-    <input type="text" name="lname" size="20" id="lname" value="" class="input" />  
-    <span id="lname_error">&nbsp;</span> 
+    <input type="text" name="lname" size="20" id="lname" value="" class="input" />
+    <span id="lname_error">&nbsp;</span>
 </dd>
 
 <dt>
@@ -127,21 +127,21 @@
     <span id="org_error">&nbsp;</span>
 </dd>
 <dt>
-    <label for="address">Street Address</label>: 
+    <label for="address">Street Address</label>:
 </dt>
 <dd>
     <textarea  id="address"  class="input" name="address" cols="35" rows="3"></textarea>
     <span id="address_error">&nbsp;</span>
 </dd>
 <dt>
-    <label for="city">City</label>: 
+    <label for="city">City</label>:
 </dt>
 <dd>
     <input type="text" id="city" name="city"  class="input" value="" >
     <span id="city_error">&nbsp;</span>
 </dd>
 <dt>
-    <label for="country">Country</label>: 
+    <label for="country">Country</label>:
 </dt>
 <dd>
     <select name="country" id="country">
@@ -159,7 +159,7 @@
                 <input type="text" name="state" id="state" maxlength="2" class="input"/>
                 <span id="state_error">&nbsp;</span>
     </dd>
-     <dt class="state_block">   
+     <dt class="state_block">
      <label for="zip">ZIP Code:</label>
      </dt>
      <dd class="state_block">
@@ -215,7 +215,7 @@
 		<br style="width:100%;clear:both;" />
 
 	</div>
-<div id="advertising">
+<div role="complementary" aria-label="advertising" id="advertising">
 <h2>Advertising</h2>
 <div>
 <img src="images/rum_cover.jpg" alt="" />
@@ -225,11 +225,11 @@
 </div>
 
 <p><br><br>&nbsp;</p>
-</div> <!-- end page wrapper --> 
+</div> <!-- end page wrapper -->
 <p><br><br>&nbsp;</p>
 </div>
 
-<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
+<div role="contentinfo" id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
 </div>
 
 </body>
