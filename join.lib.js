@@ -29,31 +29,22 @@ var JoinForm = function() {
   this.fields['tele'].message = 'Use 999-999-9999 format.';
 
   // Field error messages
-  this.fields['username'].required = 'Username is required.';
-  this.fields['username'].tooShort = [
-    'Username must be at least 4 numbers and/or letters.',
-    4
-  ];
-  this.fields['username'].isUsername =
-    'Username must contain numbers and letters';
-  this.fields['fname'].isName = 'First name can only contain letters';
-  this.fields['lname'].isName = 'Last name can only contain letters';
-  this.fields['email'].required = 'Email is required.';
-  this.fields['email'].isEmail = 'Email is not valid.';
-  this.fields['password'].required =
-    'Password must be 4 or more letters and 2 or more numbers.';
-  this.fields['password'].isPassword = [
-    'Password must be 4 or more letters and 2 or more numbers'
-  ];
-  this.fields['state'].isState = 'State is not valid.';
-  this.fields['zip'].isZip = 'ZIP Code is not valid.';
-  this.fields['province'].isProvince = 'Province is not valid.';
-  this.fields['postal'].isPostal = 'Postal Code is not valid.';
-  this.fields['tele'].isPhone = 'Phone number is not valid.';
-  this.success =
-    "You have successfully joined. We're happy to have you as a member.";
-};
-
+  this.fields["username"].required = "Username is required.";
+  this.fields["username"].tooShort = ["Username must be at least 4 numbers and/or letters.", 4];
+  this.fields["username"].isUsername = "Username must contain numbers and letters";
+  this.fields["fname"].isName = "First name can only contain letters"
+  this.fields["lname"].isName = "Last name can only contain letters"
+  this.fields["email"].required = "Email is required.";
+  this.fields["email"].isEmail = "Email is not valid.";
+  this.fields["password"].required = "Password must be 4 or more letters and 2 or more numbers.";
+  this.fields["password"].isPassword = ["Password must be 4 or more letters and 2 or more numbers"];
+  this.fields["state"].isState = "State is not valid.";
+  this.fields["zip"].isZip = "ZIP Code is not valid.";
+  this.fields["province"].isProvince = "Province/Territory is not valid.";
+  this.fields["postal"].isPostal = "Postal Code is not valid.";
+  this.fields["tele"].isPhone = "Phone number is not valid.";
+  this.success = "You have successfully joined. We're happy to have you as a member."
+}
 // Validation methods
 JoinForm.prototype.tooShort = function(text, length) {
   return text.length < length;
@@ -94,87 +85,27 @@ JoinForm.prototype.isCountry = function(country) {
   return true;
 };
 
-JoinForm.prototype.isState = function(text) {
-  var states = new Array(
-    'AL',
-    'AK',
-    'AZ',
-    'AR',
-    'CA',
-    'CO',
-    'CT',
-    'DE',
-    'DC',
-    'FL',
-    'GA',
-    'HI',
-    'ID',
-    'IL',
-    'IN',
-    'IA',
-    'KS',
-    'KY',
-    'LA',
-    'ME',
-    'MD',
-    'MA',
-    'MI',
-    'MN',
-    'MS',
-    'MO',
-    'MT',
-    'NE',
-    'NV',
-    'NH',
-    'NJ',
-    'NM',
-    'NY',
-    'NC',
-    'ND',
-    'OH',
-    'OK',
-    'OR',
-    'PA',
-    'RI',
-    'SC',
-    'SD',
-    'TN',
-    'TX',
-    'UT',
-    'VT',
-    'VA',
-    'WA',
-    'WV',
-    'WI',
-    'WY'
-  );
-  for (var i in states) {
-    if (text == states[i]) {
-      return true;
+JoinForm.prototype.isState = function (text) {
+    var states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
+        "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
+        "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
+        "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI",
+        "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
+    for( var i in states ) {
+        if ( text == states[i] ) {
+            return true;
+        }
     }
   }
   return false;
 };
 
-JoinForm.prototype.isProvince = function(text) {
-  var provinces = new Array(
-    'BC',
-    'AB',
-    'SK',
-    'MB',
-    'ON',
-    'QB',
-    'PE',
-    'NS',
-    'NF',
-    'NB',
-    'YK',
-    'NV',
-    'NW'
-  );
-  for (var i in provinces) {
-    if (text == provinces[i]) {
-      return true;
+JoinForm.prototype.isProvince = function (text) {
+    var provinces = ["AB", "BC", "MB", "NB", "NL", "NS", "NU", "NT", "ON", "PE", "QC", "SK", "YT"];
+    for( var i in provinces ) {
+        if ( text == provinces[i] ) {
+            return true;
+        }
     }
   }
   return false;
