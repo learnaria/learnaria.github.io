@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head><title>Static WAI-ARIA Demo</title></head>
+<body>
+<div id="chooser">
+Use this menu to browse through our offerings, and choose courses you wish to register for.
+</div>
+<div id="navhowto" style="position:absolute;left:-11110px">
+Use the tab key to enter and exit the menu. Use the arrow keys to navigate within the menu
+</div>
+<div id="menu_container" tabindex="0" aria-details="chooser">
+<ul role="menubar" aria-activedescendant="courses" id="offerings" aria-describedby="navhowto" tabindex="0">
+ <li role="menuitem" id="home">Home</li>
+ <li role="menuitem" aria-haspopup="true" id="courses">Courses
+  <ul role="menu" aria-expanded="true">
+    <li role="menuitem" id="economics">Economics</li>
+    <li role="menuitem" id="compsci">Computer Science</li>
+  </ul>
+ </li>
+</ul>
+</div>
+</body>
+</html>

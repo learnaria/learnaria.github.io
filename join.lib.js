@@ -30,7 +30,7 @@ var JoinForm = function () {
     // Field error messages
     this.fields["username"].required = "Username is required.";
     this.fields["username"].tooShort = ["Username must be at least 4 numbers and/or letters.", 4];
-    this.fields["username"].isUsername = "Username must contain numbers and letters";
+    this.fields["username"].isUsername = "Username must contain only numbers and letters";
     this.fields["fname"].isName = "First name can only contain letters"
     this.fields["lname"].isName = "Last name can only contain letters"
     this.fields["email"].required = "Email is required.";
@@ -55,7 +55,7 @@ JoinForm.prototype.matches = function (text1, text2) {
 }
 
 JoinForm.prototype.isUsername = function(text){
-        return /^[a-zA-Z0-9]{4}[a-zA-Z]*?$/.test(text);
+        return /^[a-zA-Z0-9]{4,}[a-zA-Z]*?$/.test(text);
 }
 JoinForm.prototype.isPassword = function (text) {
     return /^(?=.*[a-zA-Z])(?=.*[0-9])/.test(text);

@@ -1,236 +1,222 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <title>Our Community Website: Landmarks and other Static WAI-ARIA</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="description" content="test">
-        <link rel="stylesheet" href="styles.css" type="text/css">
-
-        <script type="text/javascript" src="join.lib.js"></script>
-	    <script type="text/javascript" src="join.js"></script>
-    </head>
-<body> 
-<div id="top-bar">&nbsp; </div>
-<div class="page_wrapper">
-
-<div id="header">
-	<div id="course_title_container" style="left:1em;">		
-	    <h1 id="section-title">Our Community Website</h1>
-	</div>
-</div>
-
-<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
-    <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
-        <a name="main-nav" id="main-nav"></a>
-        <ul style="" id="topnavlist">
-        <li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
-            <li><a href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a></li>
-            <li><a href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a></li>
-            <li><a href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a></li>
-            <li><a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
-            <li><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li> 
-        </ul>
-    </div> 
-</div>
-
-<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
-<div class="crumbcontainer">
-		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
-</div>
-<div id="contentwrapper">
-    <div id="lrg_content">
-		<div id="leftcolumn">
-		  <a id="menu"></a>
-		     <div id="side-menu" aria-label="left side menu" accesskey="0">
-		        <br/>
-                <h2 class="box"><span>Networking</span></h2>
-                <div class="box" id="menu_Networking">
-                    <ul class="social_side_menu">
-                        <li><a href="" class="fake">My Network</a></li>
-                        <li><a href="" class="fake">My Contacts</a></li>
-                        <li><a href="" class="fake">Network Profile</a></li>
-                        <li><a href="" class="fake">Gadgets</a></li>
-                        <li><a href="" class="fake">Network Groups</a></li>
-                        <li><a href="" class="fake">Settings</a></li>
-                    </ul>
-                    <div class="divider"></div>
-                </div>
-			<br/>
-                <h2 class="box"><span>People Online</span></h2>
-                <div class="box" id="menu_UsersOnline">
-                    <ul style="padding: 0px; list-style: none;">
-                        <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
-                    </ul>
-                </div>
-			<br/>
-		    </div>
-		</div>
-    </div>	<!-- //end of the left column -->	
-
-	<div id="contentcolumn">
-	<div id="message"></div>
-	<br style="clear:both;">
-	<a id="top"></a>
-
-<div class="profile">
-<h2>Join our community</h2>
-<div id="feedback">&nbsp;</div>
-<form id="join_form">
-<dl>
-<dt>
-<img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
-</dt>
-<dd>
-</dd>
-<dt>
-<label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
-</dt>
-<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
-        <span id="username_error">&nbsp;</span><br />
-</dd>
-<dt>
-    <label for="password">Password:</label>
-    <img src="images/required.gif"  alt="Required Field" />
-</dt>
-<dd>
-    <input type="text" name="password" size="20" id="password" value="" class="input" /><br />
-    <span id="password_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="email">Email:</label>
-	<img src="images/required.gif" class="img" />
-</dt>
-<dd>    
-    <input type="text" name="email" size="30" id="email" value="" class="input"/><br />
-    <span id="email_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="fname">First Name:</label>
-</dt>
-<dd>
-    <input type="text" name="fname" size="20" id="fname" value="" class="input" />
-    <span id="fname_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="lname">Last Name:</label>
-</dt>
-<dd>
-    <input type="text" name="lname" size="20" id="lname" value="" class="input" />  
-    <span id="lname_error">&nbsp;</span> 
-</dd>
-
-<dt>
-    <label for="org">Organization</label>:
-</dt>
-<dd>
-    <input type="text"  class="input" id="org" name="organization" value="" size="30" />
-    <span id="org_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="address">Street Address</label>: 
-</dt>
-<dd>
-    <textarea  id="address"  class="input" name="address" cols="35" rows="3"></textarea>
-    <span id="address_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="city">City</label>: 
-</dt>
-<dd>
-    <input type="text" id="city" name="city"  class="input" value="" >
-    <span id="city_error">&nbsp;</span>
-</dd>
-<dt>
-    <label for="country">Country</label>: 
-</dt>
-<dd>
-    <select name="country" id="country">
-        <option value="ca">Canada</option>
-        <option value="usa">USA</option>
-    </select>
-    <span id="country_error">&nbsp;</span>
-</dd>
-
-<dt>
-    <dt class="state_block">
-                <label for="state">State:</label>
-    </dt>
-    <dd class="state_block">
-                <input type="text" name="state" id="state" maxlength="2" class="input"/>
-                <span id="state_error">&nbsp;</span>
-    </dd>
-     <dt class="state_block">   
-     <label for="zip">ZIP Code:</label>
-     </dt>
-     <dd class="state_block">
-                    <input type="text" name="zip" id="zip"  class="input"/>
-                    <span id="zip_error">&nbsp;</span><br />
-    </dd>
-
-    <dt class="prov_block">
-    <label for="province">Province/Territory:</label>
-    </dt>
-    <dd class="prov_block">
-                    <select name="province" id="province" class="input">
-                        <option value="AB">Alberta</option>
-                        <option value="BC">British Columbia</option>
-                        <option value="MB">Manitoba</option>
-                        <option value="NB">New Brunswick</option>
-                        <option value="NL">Newfoundland and Labrador</option>
-                        <option value="NS">Nova Scotia</option>
-                        <option value="NU">Nunavut</option>
-                        <option value="NT">Northwest Territories</option>
-                        <option value="ON">Ontario</option>
-                        <option value="PE">Prince Edward Island</option>
-                        <option value="QC">Quebec</option>
-                        <option value="SK">Saskatchewan</option>
-                        <option value="YT">Yukon</option>
-                    </select>
-                    <span id="province_error">&nbsp;</span>
-    </dd>
-    <dt class="prov_block">
-                <label for="postal">Postal Code:</label>
-    </dt>
-    <dd class="prov_block">
-                    <input type="text" name="postal" id="postal" class="input"/>
-                    <span id="postal_error">&nbsp;</span><br />
-    </dd>
-
-<dt>
-    <label for="tele">Telephone</label>:
-</dt>
-<dd>
-    <input type="text" id="tele" name="telephone"  class="input" value="" >
-    <span id="tele_error">&nbsp;</span>
-</dd>
-</dl>
-<br  style="clear:both;"/>
-<div>
-    <input type="button" id="join" value="Join" /> &nbsp;
-    <input type="button" id="reset_form" value="Reset" /><br />
-</div>
-</form>
-<br  style="clear:both;"/>
-
-		<br style="width:100%;clear:both;" />
-
-	</div>
-<div id="advertising">
-<h2>Advertising</h2>
-<div>
-<img src="images/rum_cover.jpg" alt="" />
-<br style="clear:both;"/>
-</div>
-</div>
-</div>
-
-<p><br><br>&nbsp;</p>
-</div> <!-- end page wrapper --> 
-<p><br><br>&nbsp;</p>
-</div>
-
-<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
-</div>
-
-</body>
+   <head>
+      <title>Our Community Website: Landmarks and other Static WAI-ARIA</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="description" content="test">
+      <link rel="stylesheet" href="styles.css" type="text/css">
+      <script type="text/javascript" src="join.lib.js"></script>
+      <script type="text/javascript" src="join.js"></script>
+   </head>
+   <body>
+      <div id="top-bar">&nbsp; </div>
+      <div class="page_wrapper">
+         <div id="header" role="banner" aria-labeledby="section-title">
+            <div id="course_title_container" style="left:1em;">
+               <h1 id="section-title">Our Community Website</h1>
+            </div>
+         </div>
+         <div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav" role="navigation">
+            <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+               <a name="main-nav" id="main-nav"></a>
+               <ul role="menu" style="" id="topnavlist">
+                  <li><a role="menuitem" href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
+                  <li><a role="menuitem" href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a></li>
+                  <li><a role="menuitem" href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a></li>
+                  <li><a role="menuitem" href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a></li>
+                  <li><a role="menuitem" href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
+                  <li><a role="menuitem" href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li>
+               </ul>
+            </div>
+         </div>
+         <div role="search" class="logoutbar">&nbsp; <input aria-label="search field" type="text" class="input"><input type="submit" value="search"></div>
+         <div class="crumbcontainer">
+            <div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
+         </div>
+         <div id="contentwrapper">
+            <div id="lrg_content">
+               <div id="leftcolumn">
+                  <a id="menu"></a>
+                  <div id="side-menu" role="complementary" aria-label="left side menu" accesskey="0">
+                     <br/>
+                     <h2 class="box"><span id="networking_heading">Networking</span></h2>
+                     <div class="box" id="menu_Networking">
+                        <ul role="navigation" class="social_side_menu" aria-labelledby="networking_heading">
+                           <li><a href="" class="fake">My Network</a></li>
+                           <li><a href="" class="fake">My Contacts</a></li>
+                           <li><a href="" class="fake">Network Profile</a></li>
+                           <li><a href="" class="fake">Gadgets</a></li>
+                           <li><a href="" class="fake">Network Groups</a></li>
+                           <li><a href="" class="fake">Settings</a></li>
+                        </ul>
+                        <div class="divider"></div>
+                     </div>
+                     <br/>
+                     <h2 class="box"><span id="people_heading">People Online</span></h2>
+                     <div class="box" aria-labelledby="people_heading" id="menu_UsersOnline">
+                        <ul role="region" style="padding: 0px; list-style: none;">
+                           <li style="padding: 3px 0px;" id="mylogin"aria-live="polite">No one logged in</li>
+                        </ul>
+                     </div>
+                     <br/>
+                  </div>
+               </div>
+            </div>
+            <!-- //end of the left column -->   
+            <!-- ADDED: role main -->
+            <div id="contentcolumn">
+               <div id="message"></div>
+               <br style="clear:both;">
+               <a id="top"></a>
+               <main class="profile" role="main">
+                  <h2>Join our community</h2>
+                  <div id="feedback" role="alert">&nbsp;</div>
+                  <form id="join_form">
+                     <dl>
+                        <dt>
+                           <img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
+                        </dt>
+                        <dd></dd>
+                        <dt>
+                           <label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
+                        </dt>
+                        <dd><input role="alertdialog" id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
+                           <span id="username_error">&nbsp;</span><br />
+                        </dd>
+                        <dt>
+                           <label for="password">Password:</label>
+                           <img src="images/required.gif"  alt="Required Field" />
+                        </dt>
+                        <dd>
+                           <input role="alertdialog" type="text" name="password" size="20" id="password" value="" class="input" aria-required="true" aria-describedby="password_error"/><br />
+                           <span id="password_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                           <label for="email">Email:</label>
+                           <img src="images/required.gif" class="img" />
+                        </dt>
+                        <dd>    
+                           <input role="alertdialog"  type="text" name="email" size="30" id="email" value="" class="input" aria-required="true" aria-describedby="email_error"/><br />
+                           <span id="email_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                           <label for="fname">First Name:</label>
+                        </dt>
+                        <dd>
+                           <input type="text" name="fname" size="20" id="fname" value="" class="input" />
+                           <span id="fname_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                           <label for="lname">Last Name:</label>
+                        </dt>
+                        <dd>
+                           <input type="text" name="lname" size="20" id="lname" value="" class="input" />  
+                           <span id="lname_error">&nbsp;</span> 
+                        </dd>
+                        <dt>
+                           <label for="org">Organization</label>:
+                        </dt>
+                        <dd>
+                           <input type="text"  class="input" id="org" name="organization" value="" size="30" />
+                           <span id="org_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                           <label for="address">Street Address</label>: 
+                        </dt>
+                        <dd>
+                           <textarea  id="address"  class="input" name="address" cols="35" rows="3"></textarea>
+                           <span id="address_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                           <label for="city">City</label>: 
+                        </dt>
+                        <dd>
+                           <input type="text" id="city" name="city"  class="input" value="" >
+                           <span id="city_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                           <label for="country">Country</label>: 
+                        </dt>
+                        <dd>
+                           <select name="country" id="country">
+                              <option value="ca">Canada</option>
+                              <option value="usa">USA</option>
+                           </select>
+                           <span id="country_error">&nbsp;</span>
+                        </dd>
+                        <dt>
+                        <dt class="state_block">
+                           <label for="state">State:</label>
+                        </dt>
+                        <dd class="state_block">
+                           <input type="text" name="state" id="state" maxlength="2" class="input"/>
+                           <span id="state_error">&nbsp;</span>
+                        </dd>
+                        <dt class="state_block">   
+                           <label for="zip">ZIP Code:</label>
+                        </dt>
+                        <dd class="state_block">
+                           <input type="text" name="zip" id="zip"  class="input"/>
+                           <span id="zip_error">&nbsp;</span><br />
+                        </dd>
+                        <dt class="prov_block">
+                           <label for="province">Province/Territory:</label>
+                        </dt>
+                        <dd class="prov_block">
+                           <select name="province" id="province" class="input">
+                              <option value="AB">Alberta</option>
+                              <option value="BC">British Columbia</option>
+                              <option value="MB">Manitoba</option>
+                              <option value="NB">New Brunswick</option>
+                              <option value="NL">Newfoundland and Labrador</option>
+                              <option value="NS">Nova Scotia</option>
+                              <option value="NU">Nunavut</option>
+                              <option value="NT">Northwest Territories</option>
+                              <option value="ON">Ontario</option>
+                              <option value="PE">Prince Edward Island</option>
+                              <option value="QC">Quebec</option>
+                              <option value="SK">Saskatchewan</option>
+                              <option value="YT">Yukon</option>
+                           </select>
+                           <span id="province_error">&nbsp;</span>
+                        </dd>
+                        <dt class="prov_block">
+                           <label for="postal">Postal Code:</label>
+                        </dt>
+                        <dd class="prov_block">
+                           <input type="text" name="postal" id="postal" class="input"/>
+                           <span id="postal_error">&nbsp;</span><br />
+                        </dd>
+                        <dt>
+                           <label for="tele">Telephone</label>:
+                        </dt>
+                        <dd>
+                           <input type="text" id="tele" name="telephone"  class="input" value="" >
+                           <span id="tele_error">&nbsp;</span>
+                        </dd>
+                     </dl>
+                     <br  style="clear:both;"/>
+                     <div>
+                        <input type="button" id="join" value="Join" /> &nbsp;
+                        <input type="button" id="reset_form" value="Reset" /><br />
+                     </div>
+                  </form>
+                  <br  style="clear:both;"/>
+                  <br style="width:100%;clear:both;" />
+               </main>
+               <div role="complementary" aria-labelledby="advertising" id="advertising">
+                  <h2>Advertising</h2>
+                  <div>
+                     <img src="images/rum_cover.jpg" alt="" />
+                     <br style="clear:both;"/>
+                  </div>
+               </div>
+            </div>
+            <p><br><br>&nbsp;</p>
+         </div>
+         <!-- end page wrapper --> 
+         <p><br><br>&nbsp;</p>
+      </div>
+      <div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a></div>
+   </body>
 </html>
