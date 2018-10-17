@@ -13,13 +13,13 @@
 <div id="top-bar">&nbsp; </div>
 <div class="page_wrapper">
 
-<div id="header">
+<div id="header" role="banner">
 	<div id="course_title_container" style="left:1em;">		
 	    <h1 id="section-title">Our Community Website</h1>
 	</div>
 </div>
 
-<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
+<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav" role="navigation" aria-label="main navigation">
     <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
         <a name="main-nav" id="main-nav"></a>
         <ul style="" id="topnavlist">
@@ -33,13 +33,13 @@
     </div> 
 </div>
 
-<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
+<div class="logoutbar" role="search">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
 <div class="crumbcontainer">
 		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
 </div>
 <div id="contentwrapper">
     <div id="lrg_content">
-		<div id="leftcolumn">
+		<div id="leftcolumn" role="navigation" aria-label="side navigation">
 		  <a id="menu"></a>
 		     <div id="side-menu" aria-label="left side menu" accesskey="0">
 		        <br/>
@@ -72,10 +72,10 @@
 	<br style="clear:both;">
 	<a id="top"></a>
 
-<div class="profile">
+<div class="profile" role="main">
 <h2>Join our community</h2>
 <div id="feedback">&nbsp;</div>
-<form id="join_form">
+<form id="join_form" role="form">
 <dl>
 <dt>
 <img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
@@ -85,7 +85,7 @@
 <dt>
 <label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
 </dt>
-<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
+<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error" aria-live="polite"><br />
         <span id="username_error">&nbsp;</span><br />
 </dd>
 <dt>
@@ -93,7 +93,7 @@
     <img src="images/required.gif"  alt="Required Field" />
 </dt>
 <dd>
-    <input type="text" name="password" size="20" id="password" value="" class="input" /><br />
+    <input type="text" name="password" size="20" id="password" value="" class="input" aria-describedby="password_error" aria-live="polite"/><br />
     <span id="password_error">&nbsp;</span>
 </dd>
 <dt>
@@ -101,7 +101,7 @@
 	<img src="images/required.gif" class="img" />
 </dt>
 <dd>    
-    <input type="text" name="email" size="30" id="email" value="" class="input"/><br />
+    <input type="text" name="email" size="30" id="email" value="" class="input" aria-describedby="email_error" aria-live="polite"/><br />
     <span id="email_error">&nbsp;</span>
 </dd>
 <dt>
@@ -215,7 +215,7 @@
 		<br style="width:100%;clear:both;" />
 
 	</div>
-<div id="advertising">
+<div id="advertising" role="complementary">
 <h2>Advertising</h2>
 <div>
 <img src="images/rum_cover.jpg" alt="" />
@@ -229,7 +229,7 @@
 <p><br><br>&nbsp;</p>
 </div>
 
-<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
+<div id="footer" role="contentinfo"> Copyright &copy; <a href="" class="fake">Chang School.</a>
 </div>
 
 </body>
