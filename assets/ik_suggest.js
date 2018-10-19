@@ -148,9 +148,7 @@ var pluginName = "ik_suggest",
 				suggestions = plugin.getSuggestions(plugin.options.source, $me.val(), event);
 
 				if (suggestions.length >= 1) {
-					var regex1 = /\<[^>]*>/g;
-					firstSuggestion = suggestions[0].replace(regex1, "");
-					console.log($me.val(), firstSuggestion)
+					firstSuggestion = plugin.formatResultText(suggestions[0]);
 					if (event.keyCode == ik_utils.keys.enter && suggestions.length == 1 && firstSuggestion == $me.val()) break;
 
 					for(var i = 0, l = suggestions.length; i < l; i++) {
@@ -200,7 +198,11 @@ var pluginName = "ik_suggest",
 		plugin.list.empty().hide();
 		
 	};
-	
+	Plugin.prototype.formatResultText = function (str) {
+		var regex = /\<[^>]*>/g;
+		str = str.replace(regex, "")
+		return str
+	}
 	/** 
 	 * Gets a list of suggestions.
 	 * 
@@ -209,8 +211,8 @@ var pluginName = "ik_suggest",
 	 */
 	Plugin.prototype.getSuggestions = function (arr, str, event) {
 		
-		var r, pattern, regex, len, limit;
-		
+		var r, pattern, regex, len, limit, singleSuggestion, plugin;
+		plugin = event.data.plugin;
 		r = [];
 		pattern = '(\\b' + str + ')';
 		regex = new RegExp(pattern, 'gi');
@@ -230,11 +232,15 @@ var pluginName = "ik_suggest",
 
 		if (r.length > 1) { // add instructions to hidden live area
 		        this.notify.text(r.length + ' suggestions are available for this field. Use up and down arrows to select a suggestion and enter key to use it.');
-		    } else if (r.length == 1 && event.keyCode != ik_utils.keys.enter) { // add instructions to hidden live area
-		        this.notify.text('A suggestion is available for this field. Use up and down arrows to select it and enter key to use it.');
-		    } else if (r.length == 0 && str.length > 1) { // add instructions to hidden live area
-		        this.notify.text('No suggestions are available for this search string.');
+		    } else if (event.keyCode != ik_utils.keys.enter) {
+		    	if (r.length == 1) { // add instructions to hidden live area
+		    		singleSuggestion = plugin.formatResultText(r[0]);
+		    	    this.notify.text('One suggestion, ' + singleSuggestion + ', is available for this field. Use the down arrow to select it and the enter key to use it.');
+		    	} else if (r.length == 0 && str.length > 1) { // add instructions to hidden live area
+		    	    this.notify.text('No suggestions are available for this search string.');
+		    	}
 		    }
+		    
 
 		return r;
 		
