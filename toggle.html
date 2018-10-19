@@ -15,14 +15,26 @@
 				$('.italic').ik_togglebutton({'label': 'italic', 'onToggle': buttonAction });
 				$('.bold').ik_togglebutton({'label': 'bold', 'onToggle': buttonAction });
 				$('.underline').ik_togglebutton({'label': 'underline', 'onToggle': buttonAction });
-				
+
 			});
+
+			/*
+			$elem = this.element
+			.attr({
+			    "id": id,
+			    "tabindex": 0,
+			    "role": "button",
+			    "aria-label": plugin.options.label,
+			    "aria-pressed": false
+			});
+			*/
 			
 			function buttonAction() {
 				var plugin, $elem, label, state;
 				
 				plugin = this;
 				$elem = plugin.element;
+
 				label = plugin.options.label;
 				state = plugin.options.isPressed ? 'pressed' : 'not pressed';
 				

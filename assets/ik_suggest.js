@@ -2,6 +2,7 @@
  
 var pluginName = "ik_suggest",
 	defaults = {
+		'instructions': "As you start typing the application might suggest similar search terms. Use up and down arrow keys to select a suggested search string. You must type 2 or more characters to list suggestions.",
 		'minLength': 2,
 		'maxResults': 10,
 		'source': []
@@ -33,19 +34,44 @@ var pluginName = "ik_suggest",
 		
 		plugin = this;
 		
-		$elem = this.element
+		plugin.notify = $('<div/>') // add hidden live region to be used by screen readers
+			.addClass('ik_readersonly')
+			.attr({
+			    'role': 'region',
+			    'aria-live': 'polite'
+			});
+		
+		$elem = plugin.element
 			.attr({
 				'autocomplete': 'off'
 			})
 			.wrap('<span class="ik_suggest"></span>') 
+			.on('focus', {'plugin': plugin}, plugin.onFocus)
 			.on('keydown', {'plugin': plugin}, plugin.onKeyDown) // add keydown event
 			.on('keyup', {'plugin': plugin}, plugin.onKeyUp) // add keyup event
 			.on('focusout', {'plugin': plugin}, plugin.onFocusOut);  // add focusout event
 		
-		this.list = $('<ul/>').addClass('suggestions');
+		plugin.list = $('<ul/>').addClass('suggestions');
 		
-		$elem.after(this.notify, this.list);
+		$elem.after(plugin.notify, plugin.list);
 				
+	};
+	
+	/** 
+	 * Handles focus event on text field.
+	 * 
+	 * @param {object} event - Keyboard event.
+	 * @param {object} event.data - Event data.
+	 * @param {object} event.data.plugin - Reference to plugin.
+	 */
+	Plugin.prototype.onFocus = function (event) {
+		
+		var plugin;
+		
+		plugin = event.data.plugin;
+
+		plugin.notify.text(plugin.options.instructions);
+
 	};
 	
 	/** 
@@ -91,27 +117,53 @@ var pluginName = "ik_suggest",
 	 */
 	Plugin.prototype.onKeyUp = function (event) {
 		
-		var plugin, $me, suggestions, selected, msg;
+		var plugin, $me, suggestions, selected, msg, firstSuggestion;
 		
 		plugin = event.data.plugin;
 		$me = $(event.currentTarget);
-		
-			suggestions = plugin.getSuggestions(plugin.options.source, $me.val());
+
+		selected = plugin.list.find('.selected');  
+
+		switch (event.keyCode) {
+		    case ik_utils.keys.down: // select next suggestion from list   
+		                if(selected.length) {
+		                    msg = selected.removeClass('selected').next().addClass('selected').text();
+		                } else {
+		                    msg = plugin.list.find('li:first').addClass('selected').text();
+		                }
+		                plugin.notify.text(msg); // add suggestion text to live region to be read by screen reader
+		                break;
+		            case ik_utils.keys.up: // select previous suggestion from list
+		                selected = plugin.list.find('.selected');
+		                if(selected.length) {
+		                    msg = selected.removeClass('selected').prev().addClass('selected').text();
+		                }
+		                plugin.notify.text(msg);  // add suggestion text to live region to be read by screen reader    
+		                break;
+		           
+		            default:
+			
+				plugin.list.empty();
 				
-				if (suggestions.length) {
+				suggestions = plugin.getSuggestions(plugin.options.source, $me.val(), event);
+
+				if (suggestions.length >= 1) {
+					var regex1 = /\<[^>]*>/g;
+					firstSuggestion = suggestions[0].replace(regex1, "");
+					console.log($me.val(), firstSuggestion)
+					if (event.keyCode == ik_utils.keys.enter && suggestions.length == 1 && firstSuggestion == $me.val()) break;
+
+					for(var i = 0, l = suggestions.length; i < l; i++) {
+						$('<li/>').html(suggestions[i])
+						.on('click', {'plugin': plugin}, plugin.onOptionClick) // add click event handler
+						.appendTo(plugin.list);
+					}
 					plugin.list.show();
 				} else {
 					plugin.list.hide();
 				}
-				
-				plugin.list.empty();
-				
-				for(var i = 0, l = suggestions.length; i < l; i++) {
-					$('<li/>').html(suggestions[i])
-					.on('click', {'plugin': plugin}, plugin.onOptionClick) // add click event handler
-					.appendTo(plugin.list);
-				}
-	};
+
+	}};
 	
 	/** 
 	 * Handles fosucout event on text field.
@@ -155,7 +207,7 @@ var pluginName = "ik_suggest",
 	 * @param {array} arr - Source array.
 	 * @param {string} str - Search string.
 	 */
-	Plugin.prototype.getSuggestions = function (arr, str) {
+	Plugin.prototype.getSuggestions = function (arr, str, event) {
 		
 		var r, pattern, regex, len, limit;
 		
@@ -175,6 +227,14 @@ var pluginName = "ik_suggest",
 				}
 			}
 		}
+
+		if (r.length > 1) { // add instructions to hidden live area
+		        this.notify.text(r.length + ' suggestions are available for this field. Use up and down arrows to select a suggestion and enter key to use it.');
+		    } else if (r.length == 1 && event.keyCode != ik_utils.keys.enter) { // add instructions to hidden live area
+		        this.notify.text('A suggestion is available for this field. Use up and down arrows to select it and enter key to use it.');
+		    } else if (r.length == 0 && str.length > 1) { // add instructions to hidden live area
+		        this.notify.text('No suggestions are available for this search string.');
+		    }
 
 		return r;
 		
