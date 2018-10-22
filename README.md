@@ -35,3 +35,5 @@ To use these files, course participants (or anyone interested in creating access
 ## Beyond the Course
 The _Web Accessibility for Developers_ course will also be available as an ebook, with a link posted here when it becomes available. Those who are unable to participate in the course, or those who would like a reference based on the course, you are encouraged to download the ebook and work through the exercises on their own.
 
+
+.
