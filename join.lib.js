@@ -20,7 +20,7 @@ var JoinForm = function () {
     // Default field messages
     this.fields["username"].message = "Username must be at least 4 characters";
     this.fields["email"].message = "Must be a valid email address.";
-    this.fields["password"].message = "Password  requires a combination of 6 numbers and letters";
+    this.fields["password"].message = "Password  requires a combination of at least 6 numbers and letters";
     this.fields["state"].message = "Use 2 letter abbreviation.";
     this.fields["postal"].message = "6 numbers or letters";
     this.fields["zip"].message = "Use 5 or 9 digit ZIP code.";
@@ -36,7 +36,7 @@ var JoinForm = function () {
     this.fields["email"].required = "Email is required.";
     this.fields["email"].isEmail = "Email is not valid.";
     this.fields["password"].required = "Password must be 4 or more letters and 2 or more numbers.";
-   	this.fields["password"].isPassword = ["Password must be 4 or more letters and 2 or more numbers"];
+    this.fields["password"].isPassword = ["Password must be 4 or more letters and 2 or more numbers"];
     this.fields["state"].isState = "State is not valid.";
     this.fields["zip"].isZip = "ZIP Code is not valid.";
     this.fields["province"].isProvince = "Province/Territory is not valid.";
