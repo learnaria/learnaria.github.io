@@ -2,7 +2,8 @@ var joinForm;
 var joinClick = function () {
     $s("join").blur();
     if ( joinForm.validateForm() ) {
-        alert("Please correct the errors on the page.");
+    	// alerts are not read with ChromeVox, so hide for this exercise.
+       // alert("Please correct the errors on the page.");
     } else {
         document.location.href = '#top';
         $s("feedback").focus();
