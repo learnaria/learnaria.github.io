@@ -75,7 +75,10 @@
 		$me = $(event.target);
 		$panel = $me.parent('dt').next();
 		
-		if(plugin.options.autoCollapse) { // expand current panel and collapse the rest
+		isVisible = !!$panel.is(':visible');
+		$panel.slideToggle({ duration: plugin.options.animationSpeed });
+		
+		if(plugin.options.autoCollapse) { // collapse all other panels
 			
 			plugin.headers.each(function(i, el) {
 				var $hdr, $btn; 
@@ -86,16 +89,8 @@
 				if($btn[0] != $(event.currentTarget)[0]) { 
 					$btn.removeClass('expanded');
 					$hdr.next().slideUp(plugin.options.animationSpeed);
-				} else { 
-					$btn.addClass('expanded');
-					$hdr.next().slideDown(plugin.options.animationSpeed);
 				}
 			});
-			
-		} else { // toggle current panel depending on the state
-		
-			isVisible = !!$panel.is(':visible');
-			$panel.slideToggle({ duration: plugin.options.animationSpeed });
 			
 		}
 	};
