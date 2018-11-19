@@ -119,7 +119,7 @@ var pluginName = "ik_suggest",
 				
 				suggestions = plugin.getSuggestions(plugin.options.source, $me.val());
 				
-				if (suggestions.length > 1) {
+				if (suggestions.length >= 1) {
 					for(var i = 0, l = suggestions.length; i < l; i++) {
 						$('<li/>').html(suggestions[i])
 						.on('click', {'plugin': plugin}, plugin.onOptionClick) // add click event handler
