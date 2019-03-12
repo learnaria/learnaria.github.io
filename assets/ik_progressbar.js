@@ -90,9 +90,6 @@
 				
 		if (n >= this.options.max) {
 			val = this.options.max;
-			$el.attr({
-					'tabindex': -1
-				});
 			this.notification.text('Loading complete');
 		} else {
 			val = n;
