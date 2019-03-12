@@ -33,7 +33,7 @@ To use these files, course participants (or anyone interested in creating access
 1. Submit the URL to the widget in the course assignments for marking (in the course see the Rubric for marking details).
 
 ## Beyond the Course
-The _Web Accessibility for Developers_ course will also be available as an ebook, with a link posted here when it becomes available. Those who are unable to participate in the course, or those who would like a reference based on the course, you are encouraged to download the ebook and work through the exercises on their own.
+The [Web Accessibility for Developers](https://pressbooks.library.ryerson.ca/wafd/) course is also be available as an ebook. Those who are unable to participate in the course, or those who would like a reference based on the course, you are encouraged to download the ebook and work through the exercises on their own.
 
 
 .
